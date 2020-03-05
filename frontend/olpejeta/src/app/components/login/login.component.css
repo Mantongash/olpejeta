@@ -1,3 +1,20 @@
+.encloser {
+    height: 100%;
+}
+.top-bar{
+    background-color: #1F4B4B;
+    height: 2vh;
+}
+.bottom-bar{
+    background-color: #1F4B4B;
+    height: 2vh;
+}
+#username{
+    text-align: center;
+}
+#pwd{
+    text-align: center;
+}
 .inputWithIcon input[type=text]{
     padding-left: 40px;
 }
