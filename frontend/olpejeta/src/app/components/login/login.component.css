@@ -1,0 +1,16 @@
+.inputWithIcon input[type=text]{
+    padding-left: 40px;
+}
+.inputWithIcon{
+    position: relative;
+}
+.inputWithIcon i{
+    position: absolute;
+    left: 0;
+    top: 7px;
+    padding: 7px 8px;
+    transition: 1s;
+}
+.inputWithIcon input[type=text]:focus + i{
+    color: #77A141;
+}
