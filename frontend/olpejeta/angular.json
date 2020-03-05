@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "olpejeta"
+    }
+  },
+  "defaultProject": "olpejeta",
+  "cli": {
+    "analytics": "3cfd674a-203d-4980-b417-e04b7b4b2bfd"
+  }
 }
