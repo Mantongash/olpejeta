@@ -17,11 +17,3 @@ $router->get('/', function () use ($router) {
 
 
 $router->get('user/{id}', 'ExampleController@show');
-
-$router->group(['prefix'=>'api'], function() use($router){
-    $router->get('/birds', 'BirdController@index');
-    $router->post('birds', 'BirdController@create');
-    $router->get('birds/{id}', 'BirdController@show');
-    $router->put('birds/{id}', 'BirdController@update');
-    $router->delete('birds/{id}', 'BirdController@destroy');
-    });
