@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SpeciesComponent } from './components/species/species.component';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { SpeciesComponent } from './components/species/species.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
