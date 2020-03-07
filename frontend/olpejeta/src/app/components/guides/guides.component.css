@@ -17,21 +17,22 @@ input[type=text] {
 input[type=number] {
     border: 1px solid #77a141;
     border-radius: 4px;
-  } */
+  }
 
 .vertical { 
-    border-left: 2px solid black; 
-    width: 1px;
+    border-left: 2px solid #1f4b4b; 
     height: 200px; 
     position:absolute; 
-    left: 30%;
-} 
+    margin-right: 100%;
+    margin-top: 30%;
+  }
 
  h1{
     font-size: 20px;
-    /* float: right; */
     text-align: center;
     font-weight: bold;
+    margin-top: 20%;
+    margin-right: 70%;
 } 
 
 .button {
@@ -43,5 +44,5 @@ input[type=number] {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 85px;
+    margin-left: 55px;
   }
