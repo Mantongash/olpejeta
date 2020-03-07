@@ -72,3 +72,11 @@ body {
   background: #77a141;
 }
 
+
+.content {
+  height: 100vh;
+  width: 85vw;
+  position: absolute;
+  left: 15%;
+  top: 6%;
+}
