@@ -25,7 +25,7 @@ class ExampleController extends Controller
         $species = app('db')->select("SELECT * FROM Species");
         $results = app('db')->select("SELECT * FROM Bird_list");
 
-        return response()->json(['birds'=>$results]);
+        return response()->json($results);
     }
 
     //

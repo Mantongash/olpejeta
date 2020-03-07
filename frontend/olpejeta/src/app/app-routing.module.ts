@@ -4,7 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SpeciesComponent } from './components/species/species.component'
 
+import { GuidesComponent} from './components/guides/guides.component';
+
+import { UsersComponent} from './components/users/users.component';
+
 const routes: Routes = [
+  { path: 'guides', component: GuidesComponent},
+  { path: 'users', component: UsersComponent},
   { path: 'species',component: SpeciesComponent},
   { path: 'summary', component: SummaryComponent},
 ];

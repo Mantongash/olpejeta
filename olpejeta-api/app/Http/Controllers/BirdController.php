@@ -29,12 +29,6 @@ class BirdController extends Controller
 
     }
 
-    public function show($id)
-    {
-        //return $id;
-        $results = app('db')->select("SELECT * FROM Bird_list");
-        return response()->json($results::find($id));
-    }
 
     //
 }
