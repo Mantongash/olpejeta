@@ -1,1 +1,47 @@
+form{
+    margin-top: 20%;
+    margin-left: 20px;
+}
 
+input{
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+input[type=text] {
+    border: 1px solid #77a141;
+    border-radius: 4px;
+  }
+
+input[type=number] {
+    border: 1px solid #77a141;
+    border-radius: 4px;
+  } */
+
+.vertical { 
+    border-left: 2px solid black; 
+    width: 1px;
+    height: 200px; 
+    position:absolute; 
+    left: 30%;
+} 
+
+ h1{
+    font-size: 20px;
+    /* float: right; */
+    text-align: center;
+    font-weight: bold;
+} 
+
+.button {
+    background-color: #77a141; 
+    border: none;
+    color: white;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 85px;
+  }
