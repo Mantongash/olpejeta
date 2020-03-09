@@ -8,6 +8,7 @@ import { UsersComponent } from './components/users/users.component';
 import { GuidesComponent } from './components/guides/guides.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SpeciesComponent } from './components/species/species.component';
+import { SightingsComponent } from './components/sightings/sightings.component';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
@@ -18,7 +19,8 @@ import { SpeciesComponent } from './components/species/species.component';
     UsersComponent,
     GuidesComponent,
     SummaryComponent,
-    SpeciesComponent
+    SpeciesComponent,
+    SightingsComponent
   ],
   imports: [
     BrowserModule,
