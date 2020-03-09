@@ -8,6 +8,8 @@ import { UsersComponent } from './components/users/users.component';
 import { GuidesComponent } from './components/guides/guides.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SpeciesComponent } from './components/species/species.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
@@ -23,9 +25,10 @@ import { SpeciesComponent } from './components/species/species.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     // Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
