@@ -35,8 +35,8 @@ h3{
     width: 80%;
 }
 .name{
-    border: 1px solid gray; 
-    width: 80%;
+    border: 2px solid gray; 
+    /* width: 80%; */
 }
 
 span{
