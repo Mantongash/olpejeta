@@ -1,37 +1,20 @@
-<div class="row">
-  <div class="col-sm-6">
-    <h1>NAME <span >SIGHTINGS</span></h1>
-    <hr class="name" />
-    <p style="color: #1f4b4b;">johndoe@gmail.com <span>1334</span></p>
-    <p> <span style="margin-left: 61%;">1000</span></p>
-    <p>markdoe@gmail.com <span>900</span></p>
-    <p>marydoe@gmail.com <span>750</span></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let user of users">
+      <h1>NAME <span>SIGHTINGS</span></h1>
+      <hr class="name" />
+      <a style="color: #1f4b4b;">{{ user.username }}<span></span></a>
+      <p>{{ user.email }} <span></span></p>
+      <p>{{ user.contacts }} <span></span></p>
+      <p>{{ user.user_type }} <span></span></p>
+    </div>
+
+    <div class="col-md-6" *ngFor="let sighting of sightings">
+      <h2>DETAILS</h2>
+      <hr class="details"/>
+      <p>{{ sighting.no_of_birds }}</p>
+      <p>{{sighting.date_taken}}</p>
+
+    </div>
   </div>
-
-  <div class="col-sm-6">
-    <h2>DETAILS</h2>
-    <hr class="details" />
-    <img
-      src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-      alt=""
-      class="image"
-    />
-    <h3>Scientific Name: <small>Shelley's Francolin</small></h3>
-    <h3>Common Name: <small> Struthio camelus</small></h3>
-    <h3>Age <small> 6 months</small></h3>
-    <h3>Date <small> 20 March, 2020</small></h3>
-    <hr class="end"/>
-
-    <img
-      src="https://images.unsplash.com/photo-1507477338202-487281e6c27e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-      alt=""
-      class="image"
-    />
-    <h3>Scientific Name: <small>Crested Francolin</small></h3>
-    <h3>Common Name: <small> Struthio camelus</small></h3>
-    <h3>Age <small> 7 months</small></h3>
-    <h3>Date <small> 20 March, 2020</small></h3>
-    <hr class="end"/>
-  </div>
-</div> 
-
+</div>

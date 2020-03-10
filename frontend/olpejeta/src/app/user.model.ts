@@ -16,15 +16,15 @@ export class Birds{
     conservation_status:string;
     species:string;
     category:1;
-    bird_image_url:string;
-    bird_description:string;
-    bird_sound_url:string;
+    image:string;
+    description:string;
+    sound:string;
 }
 
-export class Sightings{
+export class Sighting{
     id:number;
     location_id:number;
     user_id:number;
     no_of_birds:number;
-    date_taken:Date;
+    date_taken:number;
 }
