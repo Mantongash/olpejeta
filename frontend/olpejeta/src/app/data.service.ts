@@ -7,7 +7,7 @@ import { User, Birds, Sighting } from './user.model'
 })
 export class DataService {
   apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users";
-  birdUrl = "https://ddb5f4ac.ngrok.io/api/birds";
+  birdUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
   sightingsUrl = "https://ddb5f4ac.ngrok.io/api/birds/sightings";
 
   constructor(private _http:HttpClient) { }

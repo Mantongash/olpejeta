@@ -34,14 +34,19 @@
           <h2>DETAILS</h2>
           <hr class="details" />
           <div  *ngFor='let bird of bird'>
+            <hr class="Description"/>
+            <p><strong>image:</strong><img src="{{bird.bird_image_url}}" alt="{{bird.common_name}}" class="img-responsive img-fluid"></p>
           <p><strong> Scientific Name:</strong> {{bird.scientific_name}}</p>
           <p> <strong>Common Name:</strong> {{bird.common_name}}</p>
           <p><strong>Category:</strong> Ground Birds</p>
-          <hr class="Description"/>
+          <p><strong>general status:</strong>{{bird.general_status}}</p>
+          <p><strong>conservation status:</strong>{{bird.conservation_status}}</p>
           <strong><p>Description</p></strong>
           <p>{{bird.bird_description}} </p>
+          <p><strong>Sound:</strong><a href="{{bird.bird_sound_url}}">bird sound</a>
+          </p>
         </div>
-          <!-- <hr class="Description"/> -->
+          <hr class="Description"/>
         </div>
       </div>
       
