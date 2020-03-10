@@ -11,7 +11,7 @@ export class Birds{
     id:number;
     common_name:string;
     scientific_name:string;
-    age:number;
+    bird_age:number;
     general_status:string;
     conservation_status:string;
     species:string;

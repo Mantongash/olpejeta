@@ -9,7 +9,6 @@ import { Birds } from 'src/app/user.model'
 })
 export class SpeciesComponent implements OnInit {
   bird:Birds[];
-
   constructor(private dataservice: DataService) {}
 
   ngOnInit(){ 
@@ -18,3 +17,5 @@ export class SpeciesComponent implements OnInit {
   }
 
 }
+
+
