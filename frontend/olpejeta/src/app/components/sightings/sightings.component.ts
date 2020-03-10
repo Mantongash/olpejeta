@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Sightings } from 'src/app/user.model'
+import { DataService } from 'src/app/data.service';
+
 
 @Component({
   selector: 'app-sightings',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SightingsComponent implements OnInit {
 
-  constructor() { }
+  sightings:Sightings[];
 
-  ngOnInit() {
+  constructor(private dataservice: DataService) {}
+
+  ngOnInit(){ 
+    return this.dataservice.getSightings()
+      .subscribe(data => this.sightings = data)
   }
 
 }

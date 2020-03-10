@@ -19,52 +19,29 @@
           </div>
         </div>
         <hr class="name" /> 
-        <div class="row">
-          <div class="col-md-5">
-              <p style="color: #1f4b4b;"><span>Ostrich</span></p>
+          <div class="col-md-5" *ngFor='let bird of bird'>
+              <p style="color: #1f4b4b;"><span>{{bird.id}}. {{bird.common_name}}</span></p>
 
           </div>
-          <div class="col-md-5">
-              <p style="color: #1f4b4b;"><span>1334</span></p>
+          <div class="col-md-5" *ngFor='let sighting of sightings'>
+              <p style="color: #1f4b4b;"><span>{{sighting.no_of_birds}}</span></p>
           </div>
-        </div>
-        <div class="row">
-          <div class=col-md-5>
-              <p>Helmetedn Guineafow</p>
-          </div>
-          <div class="col-md-5">
-              <p>1000</p>
-          </div>
-        </div>
-        <div class="row">
-            <div class=col-md-5>
-                <p>Shelley's Francolin</p>
-            </div>
-            <div class="col-md-5">
-                <p>900</p>
-            </div>
-          </div>
-          <div class="row">
-              <div class=col-md-5>
-                  <p>Crested Francolin</p>
-              </div>
-              <div class="col-md-5">
-                  <p>750</p>
-              </div>
-            </div>
+        
+        
+          
           </div>     
-        <div class="col-sm-5">
+        <div class="col-sm-5" id="details">
           <h2>DETAILS</h2>
           <hr class="details" />
-          <div class="parag">
-          <p><strong> Scientific Name:</strong> Common Ostrich</p>
-          <p> <strong>Common Name:</strong> Struthio camelus</p>
+          <div  *ngFor='let bird of bird'>
+          <p><strong> Scientific Name:</strong> {{bird.scientific_name}}</p>
+          <p> <strong>Common Name:</strong> {{bird.common_name}}</p>
           <p><strong>Category:</strong> Ground Birds</p>
           <hr class="Description"/>
           <strong><p>Description</p></strong>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p>{{bird.bird_description}} </p>
         </div>
-          <hr class="Description"/>
+          <!-- <hr class="Description"/> -->
         </div>
       </div>
       
