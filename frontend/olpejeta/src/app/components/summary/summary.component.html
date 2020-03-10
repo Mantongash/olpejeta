@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Summary</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="form-group d-flex align-items-center m-4">
-        <label for="filter" class="px-4">Filter:</label>
-        <input
-          type="text"
-          id="filter"
-          class="form-control p-2"
-          placeholder="Type Species"
-        />
-      </div>
-      <div id="map"></div>
-      <p class="text-center p-2 border-bottom">Detailed Information</p>
-      <P><strong>Selected Species:</strong></P>
-      <P><strong>No. of Locations:</strong></P>
-      <P><strong>Total Sightings:</strong></P>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary</title>
+  <link
+  rel="stylesheet"
+  href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+/>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-group d-flex align-items-center m-4">
+      <label for="filter" class="px-4">Filter:</label>
+      <input
+        type="text"
+        id="filter"
+        class="form-control p-2"
+        placeholder="Type Species"
+      />
     </div>
+    <div id="map"></div>
+    <p class="text-center p-2 border-bottom">Detailed Information</p>
+    <P><strong>Selected Species:</strong></P>
+    <P><strong>No. of Locations:</strong></P>
+    <P><strong>Total Sightings:</strong></P>
+  </div>
 
-    <script>
-      let mymap = L.map("map").setView([0.042562, 36.931735], 13);
-      L.tileLayer(
-        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-        {
-          attribution:
-            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 18,
-          id: "mapbox/streets-v11",
-          tileSize: 512,
-          zoomOffset: -1,
-          accessToken:
-            "pk.eyJ1IjoibWFudG9uZ2FzaCIsImEiOiJjazdsajBid3kwN3NmM2xtdHJkdmkwamdzIn0.PAWsYjOlugHK23_5moa-Jw"
-        }
-      ).addTo(mymap);
-    </script>
-  </body>
+  <script>
+    let mymap = L.map("map").setView([0.042562, 36.931735], 13);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+  </script>
+</body>
 </html>
+
+
+

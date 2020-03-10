@@ -10,6 +10,7 @@ import { GuidesComponent } from './components/guides/guides.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SpeciesComponent } from './components/species/species.component';
 import { SightingsComponent } from './components/sightings/sightings.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
@@ -21,7 +22,8 @@ import { SightingsComponent } from './components/sightings/sightings.component';
     GuidesComponent,
     SummaryComponent,
     SpeciesComponent,
-    SightingsComponent
+    SightingsComponent,
+    DashboardComponent
   ],
   imports: [
     HttpClientModule,
