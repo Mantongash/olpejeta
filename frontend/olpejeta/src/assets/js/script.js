@@ -1,5 +1,5 @@
 
-
+// Login hide password
 
 $(document).ready(function(){
   $("#me").click(function() {
@@ -12,16 +12,7 @@ $(document).ready(function(){
       $("#me").attr("class", "fa fa-eye");
       $("#pwd").attr("type", "password");
     }
-    // $(this).toggleClass("fa-eye fa-eye-slash");
-  
-    // var input = $("#pass_log_id").attr("type");
-  
-    // if (input.attr("type") === "password") {
-    //   input.attr("type", "text");
-    // } else {
-    //   input.attr("type", "password");
-    // }
+    
   });
 })
-
 
