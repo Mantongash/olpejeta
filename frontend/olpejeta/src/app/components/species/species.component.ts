@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { Birds } from 'src/app/user.model'
 
 @Component({
   selector: 'app-species',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./species.component.css']
 })
 export class SpeciesComponent implements OnInit {
+  bird:Birds[];
 
-  constructor() { }
+  constructor(private dataservice: DataService) {}
 
-  ngOnInit() {
+  ngOnInit(){ 
+    return this.dataservice.getBirds()
+      .subscribe(data => this.bird = data)
   }
 
 }

@@ -1,15 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient } from '@angular/common/http'
+import { User, Birds, Sighting } from './user.model'
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users";
+  birdUrl = "https://ddb5f4ac.ngrok.io/api/birds";
+  sightingsUrl = "https://ddb5f4ac.ngrok.io/api/birds/sightings";
 
-  private REST_API_SERVER = "https://8850d20f.ngrok.io/api/users";
+  constructor(private _http:HttpClient) { }
 
-  constructor(private httpClient: HttpClient) { }
-  public sendGetRequest(){
-    return this.httpClient.get(this.REST_API_SERVER);
+  getUsers(){
+    return this._http.get<User[]>(this.apiUrl);
+  }
+  getBirds(){
+    return this._http.get<Birds[]>(this.birdUrl);
+  }
+  getSightings(){
+    return this._http.get<Sighting[]>(this.sightingsUrl);
   }
 }

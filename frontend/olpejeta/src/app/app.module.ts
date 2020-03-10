@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UsersComponent } from './components/users/users.component';
 import { GuidesComponent } from './components/guides/guides.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SpeciesComponent } from './components/species/species.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
+
+import { SightingsComponent } from './components/sightings/sightings.component';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
@@ -17,19 +19,20 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     UsersComponent,
     GuidesComponent,
     SummaryComponent,
     SpeciesComponent,
+    SightingsComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
     // Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
