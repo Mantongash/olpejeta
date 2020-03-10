@@ -20,3 +20,11 @@ export class Birds{
     description:string;
     sound:string;
 }
+
+export class Sighting{
+    id:number;
+    location_id:number;
+    user_id:number;
+    no_of_birds:number;
+    date_taken:number;
+}

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http'
-import { User, Birds } from './user.model'
+import { User, Birds, Sighting } from './user.model'
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  apiUrl = 'https://760a09e7.ngrok.io/api/users';
-  birdUrl = 'https://760a09e7.ngrok.io/api/birds';
+  apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users";
+  birdUrl = "https://ddb5f4ac.ngrok.io/api/birds";
+  sightingsUrl = "https://ddb5f4ac.ngrok.io/api/birds/sightings";
 
   constructor(private _http:HttpClient) { }
 
@@ -16,5 +17,8 @@ export class DataService {
   }
   getBirds(){
     return this._http.get<Birds[]>(this.birdUrl);
+  }
+  getSightings(){
+    return this._http.get<Sighting[]>(this.sightingsUrl);
   }
 }

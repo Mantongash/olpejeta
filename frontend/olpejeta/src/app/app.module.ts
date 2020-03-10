@@ -24,6 +24,7 @@ import { SightingsComponent } from './components/sightings/sightings.component';
     SightingsComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
