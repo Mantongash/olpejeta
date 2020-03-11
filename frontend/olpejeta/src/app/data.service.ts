@@ -12,11 +12,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 export class DataService {
   apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users";
-<<<<<<< HEAD
   // birdUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
-=======
-  birdUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
->>>>>>> 70dcb6874158ed50309f3b2f2c666ba4072e5f9d
   sightingsUrl = "https://ddb5f4ac.ngrok.io/api/birds/sightings";
   speciesUrl = "https://olpejeta-apis.000webhostapp.com/api/birds/species";
   

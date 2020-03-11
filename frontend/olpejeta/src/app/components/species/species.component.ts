@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
-import { Birds } from 'src/app/user.model'
+import { Bird } from 'src/app/post';
 
 @Component({
   selector: 'app-species',
@@ -9,13 +9,26 @@ import { Birds } from 'src/app/user.model'
 })
 
 export class SpeciesComponent implements OnInit {
-  bird:Birds[];
-  constructor(private dataservice: DataService) {}
+  bird:Bird[];
 
-  ngOnInit(){ 
-    return this.dataservice.getBirds()
-      .subscribe(data => this.bird = data)
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.getBirds().subscribe(birds => {
+      this.bird = birds
+      this.dataService.birdsData = birds
+    });
   }
 
-}
+  onSelectedFilter(e) {
+    this.getFilteredExpenseList();
+  }
 
+  getFilteredExpenseList() {
+    if (this.dataService.searchOption.length > 0)
+      this.bird = this.dataService.filteredListOptions();
+    else {
+      this.bird = this.dataService.birdsData;
+    }
+  }
+}
