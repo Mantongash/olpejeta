@@ -13,7 +13,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 export class DataService {
   apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users";
   // birdUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
-  sightingsUrl = "https://ddb5f4ac.ngrok.io/api/birds/sightings";
+  sightingsUrl = "https://olpejeta-apis.000webhostapp.com/api/sightings";
   speciesUrl = "https://olpejeta-apis.000webhostapp.com/api/birds/species";
   
   searchOption=[]
@@ -28,6 +28,10 @@ export class DataService {
 
   getBirds(): Observable<Bird[]>{
     return this.http.get<Bird[]>(this.birdUrl);
+}
+
+getSightings(){
+    return this.http.get<Sighting[]>(this.sightingsUrl);
 }
 
 filteredListOptions() {
