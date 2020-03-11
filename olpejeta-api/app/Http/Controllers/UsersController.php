@@ -16,11 +16,7 @@ class UsersController extends Controller
     }
 
     //Showall user sightings
-    public function showAllSightings()
-    {
-        $sightings = Sightings::all();
-        return response()->json($sightings, 200);
-    }
+    
 
     //show all sightings from user
     public function showAllSightingsFromUser($user_id)
