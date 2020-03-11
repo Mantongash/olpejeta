@@ -23,21 +23,25 @@ class ExampleController extends Controller
     public function show()
     {
         //get brids details;
-        $species = DB::table('Species')        
-        ->get();
+        $bird = DB::table('Bird_list')->get();
         
-        return response()->json(['bird_data'=>$species]);
+        return response()->json(['bird_data'=>$bird]);
     }
 
     //put details
     public function create(Request$request)
     {
-        
-        $AddBird = app('db')->
-        insert([
-            'species_name'=> $request->input('species_name')
-        ]);
 
+        
+        
+        $AddBird = app('db')
+        ->insert([
+            'species_name'=> $request->input('species_name'),
+            'scientific_name'=> $request->input('scientific_name')
+        ]);
+        $AddBird->save();
         return response()->json(['birds'=>$AddBird]);
     }
+
+    
 }
