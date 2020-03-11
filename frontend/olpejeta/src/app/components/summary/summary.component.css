@@ -1,13 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
+. cover {
   margin: 0 auto;
 }
-
 #map {
   height: 40vh;
   background: #d3d3d3;
+  margin: 0 auto;
 }
