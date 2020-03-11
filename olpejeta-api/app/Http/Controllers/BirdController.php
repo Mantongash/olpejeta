@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Birds;
+use App\Sightings;
 
 use Illuminate\Http\Request;
 
@@ -12,6 +13,14 @@ class BirdController extends Controller
     public function showAllBirds()
     {
         return response()->json(Birds::all());
+    }
+
+    //show all sightings from user
+    public function showAllSightingsFromBirds($birds_id)
+    {
+        $birds = Birds::find($birds_id);
+        $sightings = $birds->sightings;
+        return response()->json($sightings, 200);
     }
 
     public function showOneBird($id)
