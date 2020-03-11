@@ -2,39 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Birds;
+
 use Illuminate\Http\Request;
-use DB;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Dotenv\Regex\Result;
 
 class BirdController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+    public function showAllBirds()
     {
-        //
+        return response()->json(Birds::all());
     }
 
-    public function index()
+    public function showOneBird($id)
     {
-     
-        $results = app('db')->select("SELECT * FROM Bird_list");       
-
-        return response()->json($results);
-
+        return response()->json(Birds::find($id));
     }
 
-    public function show($id)
+    public function create(Request $request)
     {
-        //return $id;
-        $results = app('db')->select("SELECT * FROM Bird_list");
-        return response()->json($results::find($id));
+        $birds = Birds::create($request->all());
+
+        return response()->json($birds, 201);
     }
 
-    //
+    public function update($id, Request $request)
+    {
+        $birds = Birds::findOrFail($id);
+        $birds->update($request->all());
+
+        return response()->json($birds, 200);
+    }
+
+    public function delete($id)
+    {
+        Birds::findOrFail($id)->delete();
+        return response('Deleted Successfully', 200);
+    }
 }
