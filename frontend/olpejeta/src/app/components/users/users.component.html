@@ -1,20 +1,11 @@
+
 <div class="container">
   <div class="row">
     <div class="col-md-6" *ngFor="let user of users">
       <h1>NAME <span>SIGHTINGS</span></h1>
       <hr class="name" />
-      <a style="color: #1f4b4b;">{{ user.username }}<span></span></a>
-      <p>{{ user.email }} <span></span></p>
-      <p>{{ user.contacts }} <span></span></p>
-      <p>{{ user.user_type }} <span></span></p>
-    </div>
-
-    <div class="col-md-6" *ngFor="let sighting of sightings">
-      <h2>DETAILS</h2>
-      <hr class="details"/>
-      <p>{{ sighting.no_of_birds }}</p>
-      <p>{{sighting.date_taken}}</p>
-
+      <a>{{ user.user_name }}</a>
+      <p>{{ user.user_email }} <span></span></p>
     </div>
   </div>
 </div>
