@@ -1,29 +1,67 @@
-<!-- 
- <div class="container-fluid">
-    <header>
-      <div class="heading">
-        <h4>Ol Pejeta Dashboard</h4>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ol Pejeta Conservancy</title>
+    
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo"></div>
+      <a href="#" class="nav-trigger"><span></span></a>
+    </div>
+    <div class="side-nav">
+      <div class="logo">
+        <!-- <i class="fa fa-tachometer"></i> -->
+        <img src="../assets/images/logo.png" alt="Logo" class="img-fluid" width="100%" />
       </div>
-    </header>
-    <div class="main-content">
-      <div>
-        <div class="sidebar">
-          <img
-            src="assets/images/logo.png"
-            alt="Ol Pejeta logo"
-            class="img-fluid"
-          />
-        </div>
-        <ul class="tabs">
-          <li><a routerLink="summary">Summary</a></li>
-          <li><a routerLink="species">Species</a></li>
-          <li><a routerLink="users">Users</a></li>
-          <li><a routerLink="sightings">Sightings</a></li>
-          <li><a routerLink="guides">Guides</a></li>
+      <nav>
+        <ul>
+          <li>
+            <a routerLink="summary">
+              <span> <i class="fas fa-chart-line"></i></span>
+              <span>Summary</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="species">
+              <span><i class="fas fa-feather-alt"></i></span>
+              <span>Species</span>
+            </a>
+          </li>
+          <li class="active">
+            <a routerLink="users">
+              <span><i class="fas fa-users"></i></span>
+              <span>Users</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="species">
+              <i class="fas fa-binoculars"></i>
+              <span>Sightings</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="guides">
+              <i class="fab fa-glide"></i>
+              <span>Guides</span>
+            </a>
+          </li>
         </ul>
-      </div>
-      <div class="content">
+      </nav>
+    </div>
+    <div class="main-content">
+      <div class="main">
         <router-outlet></router-outlet>
       </div>
     </div>
-  </div>  -->
+  </body>
+</html>
+

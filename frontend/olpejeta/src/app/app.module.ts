@@ -10,8 +10,6 @@ import {
   MatIconModule, MatInputModule,
   MatAutocompleteModule, MatChipsModule,
   MatFormFieldModule
-
-
 } from '@angular/material';
 
 import { DataService } from './data.service';
@@ -22,32 +20,31 @@ import { LoginComponent } from './components/login/login.component';
 import { UsersComponent } from './components/users/users.component';
 import { GuidesComponent } from './components/guides/guides.component';
 import { SummaryComponent } from './components/summary/summary.component';
-// import { SpeciesComponent } from './components/species/species.component';
+import { SpeciesComponent } from './components/species/species.component';
 import { SightingsComponent } from './components/sightings/sightings.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    // LoginComponent,
+    LoginComponent,
     UsersComponent,
     GuidesComponent,
     SummaryComponent,
-    // SpeciesComponent,
+    SpeciesComponent,
     SightingsComponent,
     DashboardComponent,
-    // SearchBarComponent,
+    SearchBarComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
