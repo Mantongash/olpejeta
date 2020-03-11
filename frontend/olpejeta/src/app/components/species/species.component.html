@@ -1,7 +1,7 @@
-<div class="container">
+<!-- <div class="container"> -->
     
     <!-- Search form -->
-    <div class="container h-100">
+    <!-- <div class="container h-100">
         <div class="d-flex justify-content-center align-items-center my-3">
             <img src="assets/images/bird.svg" height="60px" class="p-2">        
             <input class="form-control p-2 text-center" type="text" name="" placeholder="Search Species" >
@@ -20,8 +20,8 @@
         </div>
         <hr class="name" /> 
         <div class="row">
-          <div class="col-md-5">
-              <p style="color: #1f4b4b;"><span>Ostrich</span></p>
+          <div class="col-md-5" *ngFor="let birds of bird">
+              <p style="color: #1f4b4b;"><span>{{birds.common_name}}//</span></p>
 
           </div>
           <div class="col-md-5">
@@ -66,7 +66,21 @@
         </div>
           <hr class="Description"/>
         </div>
+      </div> -->
+
+      
+      <div style="margin:auto; width: 70%; margin-top: 30px;">
+        <app-search-bar (onSelectedOption)="onSelectedFilter($event)"></app-search-bar>
+        <app-search-bar (onSelectedOption)="onSelectedOption($event)"></app-search-bar>
       </div>
+
+      <h2 style="text-align:center">Data</h2>
+      <div *ngFor="let birds of bird" class="group">
+        <p><b>id :</b>{{birds.id}}</p>
+        <p><b>Cname :</b> {{birds.common_name}}</p>
+        <p><b>Sname: </b>{{birds.scientific_name}}</p>
+      </div>
+      
       
 
       

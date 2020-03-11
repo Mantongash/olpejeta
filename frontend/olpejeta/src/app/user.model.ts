@@ -1,25 +1,26 @@
 export class User{
     id:number;
-    username:string;
-    password:null;
-    email:string;
-    contacts:number;
-    type:string;
+    user_name:string;
+    user_password:null;
+    user_email:string;
+    user_contact:number;
+    user_type:string;
+
 }
 
-export class Birds{
-    id:number;
-    common_name:string;
-    scientific_name:string;
-    age:number;
-    general_status:string;
-    conservation_status:string;
-    species:string;
-    category:1;
-    image:string;
-    description:string;
-    sound:string;
-}
+// export class Birds{
+//     id:number;
+//     common_name:string;
+//     scientific_name:string;
+//     age:number;
+//     general_status:string;
+//     conservation_status:string;
+//     species:string;
+//     category:1;
+//     image:string;
+//     description:string;
+//     sound:string;
+// }
 
 export class Sighting{
     id:number;
@@ -27,4 +28,11 @@ export class Sighting{
     user_id:number;
     no_of_birds:number;
     date_taken:number;
+    user_type:string;
+}
+
+export class Species{
+    id:number;
+    species_name:number;
+    scientific_name:number;
 }
