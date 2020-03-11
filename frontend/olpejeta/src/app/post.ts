@@ -1,5 +1,5 @@
-export class Bird {
-    id:number;
-    common_name:string;
-    scientific_name:string;
+export interface Bird {
+    id: number,
+    common_name: string,
+    scientific_name :string,
 }

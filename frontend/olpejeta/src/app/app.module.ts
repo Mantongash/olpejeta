@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatInputModule } from '@angular/material/input';
+// import { MatAutocompleteModule } from '@angular/material/autocomplete';
+// import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
 
-  MatIconModule, MatChipsModule,
+  MatIconModule, MatInputModule,
+  MatAutocompleteModule, MatChipsModule,
   MatFormFieldModule
+
+
 } from '@angular/material';
 
 import { DataService } from './data.service';
