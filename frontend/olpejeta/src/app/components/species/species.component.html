@@ -2,31 +2,13 @@
   <div class="container h-100">
     <div class="d-flex justify-content-center align-items-center my-3">
       <img src="assets/images/bird.svg" height="60px" class="p-2" />
-      <input
-        class="form-control p-2 text-center"
-        type="text"
-        name=""
-        placeholder="Search Species"
-      />
+      <div style="width: 70%; margin-top: 30px;">
+        <app-search-bar
+          (onSelectedOption)="onSelectedFilter($event)"
+        ></app-search-bar>
+      </div>
     </div>
   </div>
-
-  <div style="margin:auto; width: 70%; margin-top: 30px;">
-    <app-search-bar
-      (onSelectedOption)="onSelectedFilter($event)"
-    ></app-search-bar>
-    <app-search-bar
-      (onSelectedOption)="onSelectedOption($event)"
-    ></app-search-bar>
-  </div>
-
-  <h2 style="text-align:center">Data</h2>
-  <div *ngFor="let birds of bird" class="group">
-    <p><b>id :</b>{{ birds.id }}</p>
-    <p><b>Cname :</b> {{ birds.common_name }}</p>
-    <p><b>Sname: </b>{{ birds.scientific_name }}</p>
-  </div>
-
   <div class="row p-4">
     <div class="col-md-6">
       <div class="row">
@@ -40,7 +22,7 @@
       <hr class="name" />
       <div class="col-md-5" *ngFor="let bird of bird">
         <p style="color: #1f4b4b;">
-          <span>{{ bird.id }}. {{ bird.common_name }}</span>
+          <span>{{ bird.common_name }}</span>
         </p>
       </div>
       <div class="col-md-5" *ngFor="let sighting of sightings">
