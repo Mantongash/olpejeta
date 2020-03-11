@@ -20,6 +20,10 @@ export class SpeciesComponent implements OnInit {
     });
   }
 
+  details($event){
+    alert("Niaje msee")
+  }
+
   onSelectedFilter(e) {
     this.getFilteredExpenseList();
   }

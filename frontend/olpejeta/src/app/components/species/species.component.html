@@ -21,11 +21,11 @@
       </div>
       <hr class="name" />
       <div class="col-md-5" *ngFor="let bird of bird">
-        <p style="color: #1f4b4b;">
+        <p class="bird" (click)="details($event)">
           <span>{{ bird.common_name }}</span>
         </p>
       </div>
-      <div class="col-md-5" *ngFor="let sighting of sightings">
+      <div class="col-md-6" *ngFor="let sighting of sightings">
         <p style="color: #1f4b4b;">
           <span>{{ sighting.no_of_birds }}</span>
         </p>

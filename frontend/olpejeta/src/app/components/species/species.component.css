@@ -37,6 +37,7 @@ h3{
 .details{
     border: 2px solid gray; 
     width: 80%;
+    
 }
 .name{
     border: 2px solid gray; 
@@ -60,3 +61,23 @@ h4{
     margin-left: 20%;
     font-weight: bold;
 }
+
+a {
+    color: #000;
+}
+
+.bird:hover {
+    text-decoration: none;
+    color:#1f4b4b;
+    cursor: pointer;
+}
+
+.bird:focus {
+    text-decoration: none;
+    color:#1f4b4b;
+}
+
+
+/* #details {
+    display: none;
+} */
