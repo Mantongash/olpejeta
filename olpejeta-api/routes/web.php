@@ -22,7 +22,9 @@ $router->get('/', function () use ($router) {
 //birds routes
 $router->group(['prefix' => 'api/'], function () use ($router) {
     $router->get('birds',  ['uses' => 'BirdController@showAllBirds']);
-  
+    $router->get('/birds/{bird_id}/sightings', ['uses' => 'BirdController@showAllSightingsFromBirds']);
+
+
     $router->get('birds/{id}', ['uses' => 'BirdController@showOneBird']);
   
     $router->post('birds', ['uses' => 'BirdController@create']);
@@ -64,6 +66,8 @@ $router->group(['prefix' => 'api/'], function () use ($router) {
   //Sightings routes
   $router->group(['prefix' => 'api/'], function () use ($router) {
     $router->get('sightings',  ['uses' => 'SightingsController@showAllSightings']);
+    $router->get('/sightings/{sighting_id}/birds', ['uses' => 'SightingsController@showAllBirdsFromSightings']);
+
   
     $router->get('sightings/{id}', ['uses' => 'SightingsController@showOneSighting']);
   
@@ -135,6 +139,13 @@ $router->group(['prefix' => 'api/'], function () use ($router) {
   
     $router->put('admin/{id}', ['uses' => 'AdminController@update']);
   });
+
+
+  $router->group(['prefix' => 'api'], function () use ($router) {
+    // Matches "/api/register
+    $router->post('register', 'AuthController@register');
+ 
+ });
 
 
   
