@@ -1,69 +1,73 @@
 <div class="container">
-     <div class="container h-100">
-        <div class="d-flex justify-content-center align-items-center my-3">
-            <img src="assets/images/bird.svg" height="60px" class="p-2">        
-            <input class="form-control p-2 text-center" type="text" name="" placeholder="Search Species" >
+  <div class="container h-100">
+    <div class="d-flex justify-content-center align-items-center my-3">
+      <img src="assets/images/bird.svg" height="60px" class="p-2" />
+      <input
+        class="form-control p-2 text-center"
+        type="text"
+        name=""
+        placeholder="Search Species"
+      />
+    </div>
+  </div>
+
+  <div style="margin:auto; width: 70%; margin-top: 30px;">
+    <app-search-bar
+      (onSelectedOption)="onSelectedFilter($event)"
+    ></app-search-bar>
+    <app-search-bar
+      (onSelectedOption)="onSelectedOption($event)"
+    ></app-search-bar>
+  </div>
+
+  <h2 style="text-align:center">Data</h2>
+  <div *ngFor="let birds of bird" class="group">
+    <p><b>id :</b>{{ birds.id }}</p>
+    <p><b>Cname :</b> {{ birds.common_name }}</p>
+    <p><b>Sname: </b>{{ birds.scientific_name }}</p>
+  </div>
+
+  <div class="row p-4">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>NAME</h3>
+        </div>
+        <div class="col-md-5">
+          <h3>SIGHTINGS</h3>
         </div>
       </div>
-      
-      <div style="margin:auto; width: 70%; margin-top: 30px;">
-        <app-search-bar (onSelectedOption)="onSelectedFilter($event)"></app-search-bar>
-        <app-search-bar (onSelectedOption)="onSelectedOption($event)"></app-search-bar>
+      <hr class="name" />
+      <div class="col-md-5" *ngFor="let bird of bird">
+        <p style="color: #1f4b4b;">
+          <span>{{ bird.id }}. {{ bird.common_name }}</span>
+        </p>
       </div>
-
-      <h2 style="text-align:center">Data</h2>
-      <div *ngFor="let birds of bird" class="group">
-        <p><b>id :</b>{{birds.id}}</p>
-        <p><b>Cname :</b> {{birds.common_name}}</p>
-        <p><b>Sname: </b>{{birds.scientific_name}}</p>
+      <div class="col-md-5" *ngFor="let sighting of sightings">
+        <p style="color: #1f4b4b;">
+          <span>{{ sighting.no_of_birds }}</span>
+        </p>
       </div>
-
-      <div class="row p-4">
-        <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-5">
-           <h3>NAME </h3>
-            
-          </div>
-          <div class="col-md-5">
-           <h3>SIGHTINGS</h3> 
-          </div>
-        </div>
-        <hr class="name" /> 
-          <div class="col-md-5" *ngFor='let bird of bird'>
-              <p style="color: #1f4b4b;"><span>{{bird.id}}. {{bird.common_name}}</span></p>
-
-          </div>
-          <div class="col-md-5" *ngFor='let sighting of sightings'>
-              <p style="color: #1f4b4b;"><span>{{sighting.no_of_birds}}</span></p>
-          </div>
-        
-        
-          
-          </div>     
-        <div class="col-sm-5" id="details">
-          <h2>DETAILS</h2>
-          <hr class="details" />
-          <div  *ngFor='let bird of bird'>
-            <hr class="Description"/>
-            <p><strong>image:</strong><img src="{{bird.bird_image_url}}" alt="{{bird.common_name}}" class="img-responsive img-fluid"></p>
-          <p><strong> Scientific Name:</strong> {{bird.scientific_name}}</p>
-          <p> <strong>Common Name:</strong> {{bird.common_name}}</p>
-          <p><strong>Category:</strong> Ground Birds</p>
-          <p><strong>general status:</strong>{{bird.general_status}}</p>
-          <p><strong>conservation status:</strong>{{bird.conservation_status}}</p>
-          <strong><p>Description</p></strong>
-          <p>{{bird.bird_description}} </p>
-          <p><strong>Sound:</strong><a href="{{bird.bird_sound_url}}">bird sound</a>
-          </p>
-        </div>
-          <hr class="Description"/>
-        </div>
+    </div>
+    <div class="col-sm-5" id="details">
+      <h2>DETAILS</h2>
+      <hr class="details" />
+      <div *ngFor="let bird of bird">
+        <hr class="Description" />
+        <p>
+          <strong>image:</strong
+          ><img
+            src="{{ bird.bird_image_url }}"
+            alt="{{ bird.common_name }}"
+            class="img-responsive img-fluid"
+          />
+        </p>
+        <p><strong> Scientific Name:</strong> {{ bird.scientific_name }}</p>
+        <p><strong>Common Name:</strong> {{ bird.common_name }}</p>
+        <p><strong>Category:</strong> Ground Birds</p>
+        <p>{{ bird.bird_description }}</p>
       </div>
-
-      
-     
-      
-      
-
-      
+      <hr class="Description" />
+    </div>
+  </div>
+</div>
