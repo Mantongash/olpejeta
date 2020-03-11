@@ -24,6 +24,7 @@ import { SpeciesComponent } from './components/species/species.component';
 // import { SightingsComponent } from './components/sightings/sightings.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
@@ -51,7 +52,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     MatAutocompleteModule,
     MatChipsModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [ DataService ],
   bootstrap: [AppComponent]
