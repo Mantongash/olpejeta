@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ExampleController extends Controller
 {
@@ -19,14 +20,28 @@ class ExampleController extends Controller
         //
     }
 
-    public function show($id)
+    public function show()
     {
-        //return $id;
-        $species = app('db')->select("SELECT * FROM Species");
-        $results = app('db')->select("SELECT * FROM Bird_list");
-
-        return response()->json(['birds'=>$results]);
+        //get brids details;
+        $bird = DB::table('Bird_list')->get();
+        
+        return response()->json(['bird_data'=>$bird]);
     }
 
-    //
+    //put details
+    public function create(Request$request)
+    {
+
+        
+        
+        $AddBird = app('db')
+        ->insert([
+            'species_name'=> $request->input('species_name'),
+            'scientific_name'=> $request->input('scientific_name')
+        ]);
+        $AddBird->save();
+        return response()->json(['birds'=>$AddBird]);
+    }
+
+    
 }
