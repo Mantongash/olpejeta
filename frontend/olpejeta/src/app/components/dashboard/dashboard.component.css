@@ -68,6 +68,10 @@ body {
 .nav-trigger span:after {
 	top: 6px;
 }
+
+.title {
+	color: #fff;
+}
 /* side navigation styles */
 .side-nav {
 	position: absolute;
