@@ -14,8 +14,8 @@ export class SummaryComponent implements OnInit {
         attribution: '&copy; OpenStreetMap contributors'
       })
     ],
-    zoom: 7,
-    center: latLng([ 46.879966, -121.726909 ])
+    zoom: 13,
+    center: latLng([ 0.044071, 36.932078 ])
   };
 
   constructor() { }
