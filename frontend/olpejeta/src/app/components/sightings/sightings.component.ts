@@ -8,11 +8,10 @@ import { Sighting } from 'src/app/user.model';
   styleUrls: ['./sightings.component.css']
 })
 
-export class UsersComponent implements OnInit {
+export class SightingsComponent implements OnInit {
   sightings:Sighting [];
 
-  constructor(private dataservice: DataService
-    ) {}
+  constructor(private dataservice: DataService) {}
 
   ngOnInit(){ 
     return this.dataservice.getSightings()
