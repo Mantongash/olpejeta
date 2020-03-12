@@ -1,6 +1,7 @@
 h1{
     font-size: 20px;
     margin-top: 10px;
+    margin-left: 30%;
     text-align: center;
 }
 
@@ -12,34 +13,38 @@ span{
 
 .name{
     border: 1px solid gray; 
-    width: 100%;
+    width: 80%;
 }
 
-/* p{
+p{
     font-size: 15px;
-    margin-left: 10px;
-    margin-left: 15%;
-} */
+    margin-left: 35%;
+}
 
-/* h2{
+h2{
     font-size: 20px;
     margin-top: 10px;
     text-align: center;
-} */
+    margin-right: 50%;
+}
 
-/* h3{
+.det{
+    width: 80%;
+}
+
+h3{
     font-size: 15px;
     margin-left: 25%;
     font-weight: bold;
-} */
+} 
 
-/* .image{
+.image{
     height: 30%;
     width: 30%;
     margin-left: 30%;
     border: 1px solid #ddd;
     border-radius: 4px;
-} */
+}
 
 /* .details{
     border: 1px solid gray; 

@@ -1,43 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Summary</title>
-  <link
-  rel="stylesheet"
-  href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
-/>
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-</head>
-<body>
-  <div class="container">
-    <div class="form-group d-flex align-items-center m-4">
-      <label for="filter" class="px-4">Filter:</label>
-      <input
-        type="text"
-        id="filter"
-        class="form-control p-2"
-        placeholder="Type Species"
-      />
+<div class="container">
+  <app-search-bar
+    (onSelectedOption)="onSelectedFilter($event)"
+  ></app-search-bar>
+  <div class="data d-flex align-items-center">
+    <div
+      id="map"
+      leaflet
+      [leafletOptions]="options"
+      [leafletLayersControl]="layersControl"
+    ></div>
+    <div class="details">
+      <div class="card items text-center">
+        <p><small>Species</small></p>
+        <h3 class="species">All</h3>
+      </div>
+      <div class="card items">
+        <p><small>Locations</small></p>
+        <h3 class="locations">20</h3>
+      </div>
+      <div class="card items">
+        <p><small>Sightings</small></p>
+        <h3 class="sightings">300</h3>
+
+      </div>
     </div>
-    <div id="map"></div>
-    <p class="text-center p-2 border-bottom">Detailed Information</p>
-    <P><strong>Selected Species:</strong></P>
-    <P><strong>No. of Locations:</strong></P>
-    <P><strong>Total Sightings:</strong></P>
+    <div class="chart">
+      <p>Chart goes here</p>
+    </div>
   </div>
-
-  <script>
-    let mymap = L.map("map").setView([0.042562, 36.931735], 13);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mymap);
-  </script>
-</body>
-</html>
-
-
-
+</div>

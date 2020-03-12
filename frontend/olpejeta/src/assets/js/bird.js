@@ -1,6 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', function(){
-
     document.getElementById('fetchUserDataBtn').addEventListener('click', fetchUserData);
     
     function fetchUserData(){
@@ -35,11 +34,7 @@ document.addEventListener('DOMContentLoaded', function(){
             output += '</ul>'
             document.getElementById("response").innerHTML = output;
         });
-
-
     }
-
-
 });
 
 
