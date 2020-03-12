@@ -1,5 +1,11 @@
 <div class="container">
-  <div id="map" class="m-4"></div>
+  <div
+  class="m-4"
+  id="map"
+  leaflet
+  [leafletOptions]="options"
+  [leafletLayersControl]="layersControl"
+></div>
 </div>
 <div>
   <div class="sightings" id="users" *ngFor="let sighting of sightings">
