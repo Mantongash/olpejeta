@@ -10,7 +10,7 @@ import { latLng, tileLayer } from 'leaflet';
 })
 
 export class SightingsComponent implements OnInit {
-  // sightings:Sighting[];
+  sightings:Sighting [];
 
   options = {
     layers: [
@@ -24,8 +24,8 @@ export class SightingsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  //   return this.dataservice.getSightings()
-  //     .subscribe(data => this.sightings = data)
+  ngOnInit(){ 
+    // return this.dataservice.getSightings()
+    //   .subscribe(data => this.sightings = data)
   }
 }

@@ -21,9 +21,7 @@ const routes: Routes = [
     { path: 'searchbar', component: SearchBarComponent},
   ]
 },
-
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

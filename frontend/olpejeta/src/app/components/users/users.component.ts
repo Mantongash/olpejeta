@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { User } from 'src/app/user.model';
 
+import { Sighting } from '../../post';
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
