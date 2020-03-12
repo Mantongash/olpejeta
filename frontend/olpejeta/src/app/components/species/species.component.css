@@ -1,81 +1,136 @@
+/* .sightings{
+    margin-left: 30%;
+} */
+
 h1{
-    font-size: 20px;
-    margin-top: 10px;
-    text-align: center;
+    margin-left: 25%;
+    font-size: 25px;
+}
+
+span{
+    margin-left: 20%;
 }
 
 p{
+    margin-left: 25%;
+}
+
+.name{
+    width: 55%;
+    border: 1px solid gray;
+}
+
+.details{
+    margin-left: 30%;
+}
+
+h2{
+    font-size:25px;
+    text-align: center;
+}
+
+.det{
+    width: 55%;
+    border: 1px solid gray;
+}
+
+h3{
+    font-size: 20px;
+    margin-left: 25%;
+}
+
+.image{
+    height: 30%;
+    width: 40%;
+    margin-left: 30%;
+    border: 1px solid #ddd;
+    border-radius: 4px; 
+}
+
+
+
+
+/* h1{
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+} */
+
+/* p{
     font-size: 15px;
     margin-left: 10px;
   
-}
-.parag{
+} */
+/* .parag{
       margin-left: 10%;
 
-}
-h2{
+} */
+/* h2{
     font-size: 15px;
     margin-top: 10px;
     text-align: center;
     font-weight: bold;
-}
+} */
 
-h3{
-    font-size: 15px;
-    /* margin-left: 25%; */
+
+/* h3{ */
+    /* font-size: 15px; */
+    /* margin-left: 25%; 
     font-weight: bold;
 }
 
-.image{
+/* .image{
     height: 30%;
     width: 30%;
     margin-left: 30%;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
+} */
 
-.details{
+/* .details{
     border: 2px solid gray; 
     width: 80%;
     
-}
-.name{
+} */
+/* .name{
     border: 2px solid gray; 
     width: 70%;
     margin-right: 35%;
-}
-span{
+} */
+
+/* span{
     font-weight: bold;
-}
-small{
+} */
+
+/* small{
     margin-left: 30%;
     font-size: 15px;
-}
+} */
 
-.end{
+/* .end{
     border: 0.5px solid gray; 
     width: 80%;
-}
+} */
 
-h4{
+/* h4{
     margin-left: 20%;
     font-weight: bold;
-}
+} */
 
-a {
+/* a {
     color: #000;
-}
+} */
 
-.bird:hover {
+/* .bird:hover {
     text-decoration: none;
     color:#1f4b4b;
     cursor: pointer;
-}
+} */
 
-.bird:focus {
+/* .bird:focus {
     text-decoration: none;
     color:#1f4b4b;
-}
+} */
 
 
 /* #details {
