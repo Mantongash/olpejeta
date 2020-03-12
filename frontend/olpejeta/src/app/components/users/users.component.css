@@ -1,6 +1,5 @@
 h1{
     font-size: 20px;
-    /* margin-top: 10px; */
     margin-left: 30%;
     text-align: center;
 }
@@ -14,7 +13,6 @@ span{
 .name{
     border: 1px solid gray; 
     width: 60%;
-    /* margin-left: 10%; */
     margin-right: 10%;
 }
 
@@ -25,7 +23,6 @@ p{
 
 h2{
     font-size: 20px;
-    margin-top: 10px;
     text-align: center;
     margin-right: 50%;
     margin-left: 45%;
@@ -34,7 +31,7 @@ h2{
 .det{
     width: 50%;
     border: 1px solid gray;
-    /* margin-right: 10%;   */
+
 }
 
 h3{
@@ -53,14 +50,13 @@ h3{
 
 .container{
     margin-top: 10px;
-    /* margin-left: 10px; */
 }
 
 
-/* small{
+small{
     margin-left: 10px;
     font-size: 15px;
-} */
+}
 
 .end{
     border: 0.5px solid gray; 
