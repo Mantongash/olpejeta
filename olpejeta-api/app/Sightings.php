@@ -26,4 +26,9 @@ class Sightings extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function Birds()
+    {
+        return $this->belongsToMany('App\Birds', 'bird_sightings');
+    }
 }
