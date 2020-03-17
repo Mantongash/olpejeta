@@ -7,19 +7,18 @@ export class User{
     user_type:string;
 }
 
-export class Bird{
-    id:number;
-    common_name:string;
-    scientific_name:string;
-    bird_age:number;
-    general_status:string;
-    conservation_status:string;
-    species:string;
-    category:1;
-    image:string;
-    description:string;
-    sound:string;
-}
+// export class Bird{
+//     _id: string;
+//     common_name:string;
+//     scientific_name:string;
+//     bird_age:number;
+//     general_status:string;
+//     conservation_status:string;
+//     species:string;
+//     category:1;
+//     bird_image_url:string;
+//     bird_description:string;
+// }
 
 export class Sighting{
     id:number;
@@ -32,6 +31,5 @@ export class Sighting{
 
 export class Species{
     id:number;
-    species_name:number;
-    scientific_name:number;
+    species_name:string;
 }
