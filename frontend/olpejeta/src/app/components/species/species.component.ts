@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { Bird } from 'src/app/post';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { SpeciesAddComponent } from '../species-add/species-add.component';
 
 @Component({
   selector: 'app-species',
@@ -15,7 +17,18 @@ export class SpeciesComponent implements OnInit {
   data: Bird[] = [];
   isLoadingResults = true;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, public matDialog: MatDialog) {}
+
+  openAddBird() {
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "650px";
+    dialogConfig.width = "600px";
+   // https://material.angular.io/components/dialog/overview
+    const modalDialog = this.matDialog.open(SpeciesAddComponent, dialogConfig);
+  }
 
   ngOnInit() {
     this.dataService.getBirds()
