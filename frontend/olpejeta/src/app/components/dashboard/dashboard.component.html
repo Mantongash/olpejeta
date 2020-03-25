@@ -16,6 +16,7 @@
     <div class="header">
       <div class="logo"></div>
       <a href="#" class="nav-trigger"><span></span></a>
+      <h3 class="text-center title">OL PEJETA</h3>
     </div>
     <div class="side-nav">
       <div class="logo">
@@ -25,8 +26,8 @@
       <nav>
         <ul>
           <li>
-            <a routerLink="summary">
-              <span> <i class="fas fa-chart-line"></i></span>
+            <a routerLink="summary" routerLinkActive="active">
+              <span> <i class="fas fa-chart-line icon"></i></span>
               <span>Summary</span>
             </a>
           </li>
@@ -42,12 +43,14 @@
               <span>Users</span>
             </a>
           </li>
+         
           <li>
-            <a routerLink="species">
-              <i class="fas fa-binoculars"></i>
+            <a routerLink="sightings">
+              <i class="fab fa-glide"></i>
               <span>Sightings</span>
             </a>
           </li>
+
           <li>
             <a routerLink="guides">
               <i class="fab fa-glide"></i>
@@ -57,11 +60,11 @@
         </ul>
       </nav>
     </div>
+    <div class="main">
     <div class="main-content">
-      <div class="main">
         <router-outlet></router-outlet>
-      </div>
     </div>
+  </div>
   </body>
 </html>
 

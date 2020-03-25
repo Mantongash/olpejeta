@@ -11,13 +11,26 @@ import { Bird } from 'src/app/post';
 export class SpeciesComponent implements OnInit {
   bird:Bird[];
 
+  displayedColumns: string[] = ['common_name', 'scientific_price'];
+  data: Bird[] = [];
+  isLoadingResults = true;
+
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getBirds().subscribe(birds => {
+    this.dataService.getBirds()
+    .subscribe(birds => {
       this.bird = birds
       this.dataService.birdsData = birds
-    });
+      this.isLoadingResults = false;
+    }, err => {
+      console.log(err);
+      this.isLoadingResults = false;
+    });//bird
+  }
+
+  details($event){
+    alert("Niaje msee")
   }
 
   onSelectedFilter(e) {

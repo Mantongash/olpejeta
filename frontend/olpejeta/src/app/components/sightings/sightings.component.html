@@ -1,12 +1,18 @@
 <div class="container">
-  <div id="map" class="m-4"></div>
+  <div
+  class="m-4"
+  id="map"
+  leaflet
+  [leafletOptions]="options"
+  [leafletLayersControl]="layersControl"
+></div>
 </div>
 <div>
   <div class="sightings" id="users" *ngFor="let sighting of sightings">
     <h2>DETAILS</h2>
     <hr/>
-    <p>{{ sighting.location_id }}</p>
+    <p>{{ sighting.user_id }}</p>
+    <p>{{ sighting.sighting_location}}</p>
     <p>{{sighting.date_taken}}</p>
-    <p>{{sighting.user_type }}</p>
   </div>
 </div>
