@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { Bird } from 'src/app/post';
+import { DataService } from '../../service/data.service';
+import { Bird } from 'src/app/models/post';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

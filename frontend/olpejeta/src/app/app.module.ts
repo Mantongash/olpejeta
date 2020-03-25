@@ -15,7 +15,7 @@ import {
   MatCardModule,
   MatDialogModule
 } from '@angular/material';
-import { DataService } from './data.service';
+import { DataService } from './service/data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';

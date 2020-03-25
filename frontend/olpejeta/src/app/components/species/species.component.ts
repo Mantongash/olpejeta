@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { Bird } from 'src/app/post';
+import { DataService } from '../../service/data.service';
+import { Bird } from 'src/app/models/post';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SpeciesAddComponent } from '../species-add/species-add.component';
 

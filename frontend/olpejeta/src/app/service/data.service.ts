@@ -1,6 +1,6 @@
-import { Bird } from 'src/app/post';
+import { Bird } from 'src/app/models/post';
 import { Injectable } from '@angular/core';
-import { User, Sighting, Species } from './user.model'
+import { User, Sighting, Species } from '../models/user.model'
 // import { Bird } from './post';
 import { Observable, of, throwError} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
