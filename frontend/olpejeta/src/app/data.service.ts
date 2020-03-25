@@ -18,7 +18,7 @@ export class DataService {
   apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users/";
   // birdUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
   sightingsUrl = "https://olpejeta-apis.000webhostapp.com/api/sightings";
-  speciesUrl = "https://olpejeta.000webhostapp.com/getSpecies.php";
+  birdsUrl = "https://olpejeta.000webhostapp.com/getSpecies.php";
   
   searchOption=[]
   public birdsData: Bird[] 
