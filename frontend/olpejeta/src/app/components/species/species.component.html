@@ -45,7 +45,7 @@
 
 <!--add functionality-->
 
-<div class="example-container mat-elevation-z8">
+<!-- <div class="example-container mat-elevation-z8">
   <div class="example-loading-shade"
        *ngIf="isLoadingResults">
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
@@ -57,16 +57,16 @@
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="data" class="example-table"
-           matSort matSortActive="common_name" matSortDisableClear matSortDirection="asc">
+           matSort matSortActive="common_name" matSortDisableClear matSortDirection="asc"> -->
 
       <!-- Common Name Column -->
-      <ng-container matColumnDef="bird_name">
+      <!-- <ng-container matColumnDef="bird_name">
         <th mat-header-cell *matHeaderCellDef>Bird Name</th>
         <td mat-cell *matCellDef="let row">{{row.common_name}}</td>
-      </ng-container>
+      </ng-container> -->
 
       <!-- scientific Name Column -->
-      <ng-container matColumnDef="scientific_name">
+      <!-- <ng-container matColumnDef="scientific_name">
         <th mat-header-cell *matHeaderCellDef>Scientific Name</th>
         <td mat-cell *matCellDef="let row">$ {{row.scientific_name}}</td>
       </ng-container>
@@ -75,4 +75,4 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/species-details/', row._id]"></tr>
     </table>
   </div>
-</div>
+</div> -->

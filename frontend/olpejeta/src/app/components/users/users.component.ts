@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { User } from 'src/app/user.model';
-
-import { Sighting } from '../../post';
+import { Bird } from '../../post';
 
 @Component({
   selector: 'app-users',
@@ -12,6 +11,7 @@ import { Sighting } from '../../post';
 
 export class UsersComponent implements OnInit {
   users:User [];
+  bird:Bird[];
 
   constructor(private dataservice: DataService
     ) {}
