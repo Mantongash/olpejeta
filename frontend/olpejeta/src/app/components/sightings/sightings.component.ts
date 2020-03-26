@@ -79,11 +79,11 @@ export class SightingsComponent implements OnInit {
   constructor(private http: HttpClient) { }  
   ngOnInit(){  
     // update data again and again after every 5 seconds interval  
-    //const source = interval(5000);  
+    const source = interval(5000);  
     // My dummy API  
     const apiLink = 'https://olpejeta-apis.000webhostapp.com/api/sightings';  
-    this.getApiResponse(apiLink).then(  
-    //this.subscription = source.subscribe(val =>this.getApiResponse(apiLink).then(  
+    // this.getApiResponse(apiLink).then(  
+    this.subscription = source.subscribe(val =>this.getApiResponse(apiLink).then(  
       data => {  
         const birdarr = [];  
         const idArr = [];  
@@ -105,7 +105,7 @@ export class SightingsComponent implements OnInit {
       error => {  
         console.log('Something went wrong.');  
       })  
-    //)  
+    )  
     ;  
   }  
   async getApiResponse(url: string) {  
