@@ -44,28 +44,35 @@ export class SightingsComponent implements OnInit {
       height: 500  
     },  
     title: {  
-      text: 'Sample Scatter Plot'  
+      text: 'Sample line Plot'  
     },  
     credits: {  
       enabled: false  
     },  
-    tooltip: {  
-      formatter: function() {  
-        return 'x: ' +  this.x +   '  y: ' + this.y;  
-      }  
+    tooltip: {
+      formatter: function() {
+        return 'x: ' + Highcharts.dateFormat('%e %b %y %H:%M:%S', this.x) +
+          ' y: ' + this.y.toFixed(2);
+      }
     },  
-    xAxis: {  
-      categories: []  
+    xAxis: {
+      type: 'datetime',
+      labels: {
+        formatter: function() {
+          return Highcharts.dateFormat('%e %b %y', this.value);
+        }
+      }
     },  
     series: [  
       {  
-        name: 'Mr.bird',  
+        name: 'bird', 
+        turboThreshold: 500000, 
         data: []  
       },  
-      {  
-        name: 'Mr. Pathan',  
-        data: []  
-      }  
+      // {  
+      //   name: 'Mr. Pathan',  
+      //   data: []  
+      // }  
     ]  
   }  
   subscription: Subscription;  
@@ -74,25 +81,25 @@ export class SightingsComponent implements OnInit {
     // update data again and again after every 5 seconds interval  
     //const source = interval(5000);  
     // My dummy API  
-    const apiLink = 'https://api.myjson.com/bins/zg8of';  
+    const apiLink = 'https://olpejeta-apis.000webhostapp.com/api/sightings';  
     this.getApiResponse(apiLink).then(  
     //this.subscription = source.subscribe(val =>this.getApiResponse(apiLink).then(  
       data => {  
         const birdarr = [];  
-        const pathanArr = [];  
+        const idArr = [];  
         const xAxisArr = [];  
         data.forEach(row => {  
           const temp_row = [  
-            row.Sales_Figure  
+            row.date_taken 
           ];  
-          if(xAxisArr.find(ob => ob === row.Month) === undefined){  
-             xAxisArr.push(row.Month)  
+          if(xAxisArr.find(ob => ob === row.date_taken) === undefined){  
+             xAxisArr.push(row.date_taken)  
           }  
-          row.Name === 'Faisal' ? birdarr.push(temp_row) : pathanArr.push(temp_row);  
+          row.Name === 'Bird' ? birdarr.push(temp_row): idArr.push(temp_row);
         });  
-        this.option.xAxis['categories'] = xAxisArr;  
+        this.option.xAxis['bird_count'] = xAxisArr;  
         this.option.series[0]['data'] = birdarr;  
-        this.option.series[1]['data'] = pathanArr;  
+        // this.option.series[1]['data'] = pathanArr;  
         Highcharts.chart('container', this.option);  
       },  
       error => {  
