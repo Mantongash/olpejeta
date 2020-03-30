@@ -38,79 +38,74 @@ export class SightingsComponent implements OnInit {
   };
 
 
-  public option: any = {  
-    chart: {  
-      type: 'line',  
-      height: 500  
-    },  
-    title: {  
-      text: 'Sample line Plot'  
-    },  
-    credits: {  
-      enabled: false  
-    },  
-    tooltip: {
+public option: any = {
+  chart: {
+    type: 'line',
+    height: 700
+  },
+  title: {
+    text: 'Sample line Plot'
+  },
+  credits: {
+    enabled: false
+  },
+  tooltip: {
+    formatter: function() {
+      return 'x: ' + Highcharts.dateFormat('%e %b %y %H:%M:%S', this.x) +
+        ' y: ' + this.y.toFixed(2);
+    }
+  },
+  xAxis: {
+    type: 'datetime',
+    labels: {
       formatter: function() {
-        return 'x: ' + Highcharts.dateFormat('%e %b %y %H:%M:%S', this.x) +
-          ' y: ' + this.y.toFixed(2);
+        return Highcharts.dateFormat('%e %b %y', this.value);
       }
-    },  
-    xAxis: {
-      type: 'datetime',
-      labels: {
-        formatter: function() {
-          return Highcharts.dateFormat('%e %b %y', this.value);
-        }
-      }
-    },  
-    series: [  
-      {  
-        name: 'bird', 
-        turboThreshold: 500000, 
-        data: []  
-      },  
-      // {  
-      //   name: 'Mr. Pathan',  
-      //   data: []  
-      // }  
-    ]  
-  }  
-  subscription: Subscription;  
-  constructor(private http: HttpClient) { }  
-  ngOnInit(){  
-    // update data again and again after every 5 seconds interval  
-    const source = interval(5000);  
-    // My dummy API  
-    const apiLink = 'https://olpejeta-apis.000webhostapp.com/api/sightings';  
-    // this.getApiResponse(apiLink).then(  
-    this.subscription = source.subscribe(val =>this.getApiResponse(apiLink).then(  
-      data => {  
-        const birdarr = [];  
-        const idArr = [];  
-        const xAxisArr = [];  
-        data.forEach(row => {  
-          const temp_row = [  
-            row.date_taken 
-          ];  
-          if(xAxisArr.find(ob => ob === row.date_taken) === undefined){  
-             xAxisArr.push(row.date_taken)  
-          }  
-          row.Name === 'Bird' ? birdarr.push(temp_row): idArr.push(temp_row);
-        });  
-        this.option.xAxis['bird_count'] = xAxisArr;  
-        this.option.series[0]['data'] = birdarr;  
-        // this.option.series[1]['data'] = pathanArr;  
-        Highcharts.chart('container', this.option);  
-      },  
-      error => {  
-        console.log('Something went wrong.');  
-      })  
-    )  
-    ;  
-  }  
-  async getApiResponse(url: string) {  
-    const res = await this.http.get<any[]>(url, {})  
-      .toPromise();  
-    return res;  
-  }  
+    }
+  },
+  series: [
+    {
+      name: 'bird count',
+      turboThreshold: 500000,
+      data: []
+    },
+    
+    
+  ]
+}
+subscription: Subscription;
+constructor(private http: HttpClient) { }
+
+ngOnInit(){
+  // const source = interval(10000);
+
+  
+  const apiLink = 'https://olpejeta-apis.000webhostapp.com/api/sightings';
+  this.getApiResponse(apiLink).then(
+    data => {
+      const updated_bird_data = [];
+      const updated_abnormal_data = [];
+      data.forEach(row => {
+        const temp_row = [
+          new Date(row.timestamp).getTime(),
+          row.value
+        ];
+        row.Bird === 1 ? updated_bird_data.push(temp_row) : updated_abnormal_data.push(temp_row);
+        
+      });
+      this.option.series[0]['data'] = updated_bird_data;
+      Highcharts.chart('container', this.option);
+    },
+    error => {
+      console.log('Something went wrong.');
+    })
+  // );
+  ;
+}
+
+async getApiResponse(url: string) {  
+  const res = await this.http.get<any[]>(url, {})  
+    .toPromise();  
+  return res; 
+}
 }
