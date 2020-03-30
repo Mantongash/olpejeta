@@ -13,8 +13,9 @@ import {
   MatTableModule,
   MatButtonModule,
   MatCardModule,
+  MatDialogModule
 } from '@angular/material';
-import { DataService } from './data.service';
+import { DataService } from './service/data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -26,10 +27,10 @@ import { SightingsComponent } from './components/sightings/sightings.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
-// import { SpeciesAddComponent } from './components/species-add/species-add.component';
-// import { SpeciesEditComponent } from './components/species-edit/species-edit.component';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
+import { SpeciesAddComponent } from './components/species-add/species-add.component';
+import { SpeciesEditComponent } from './components/species-edit/species-edit.component';
+import { UserdetailComponent } from './components/userdetail/userdetail.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SightingsComponent,
     DashboardComponent,
     SearchBarComponent,
-    // SpeciesDetailComponent,
-    // SpeciesAddComponent,
-    // SpeciesEditComponent,
+    SpeciesDetailComponent,
+    SpeciesAddComponent,
+    SpeciesEditComponent,
+    UserdetailComponent,
   ],
   imports: [
     HttpClientModule,
@@ -68,9 +70,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [ DataService ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SpeciesAddComponent, SpeciesComponent ],
 })
 export class AppModule { }

@@ -1,33 +1,14 @@
-<!-- <div class="example-container mat-elevation-z8">
-    <div class="example-loading-shade"
-         *ngIf="isLoadingResults">
-      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-    </div>
-
-    <div class="button-row">
-      <a mat-flat-button color="primary" [routerLink]="['/species']"><mat-icon>list</mat-icon></a>
-    </div>
-
-    <mat-card class="example-card">
-      <form [formGroup]="BirdForm" (ngSubmit)="onFormSubmit()">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Bird Name" formControlName="common_name"
-                 [errorStateMatcher]="matcher">
-          <mat-error>
-            <span *ngIf="!birdForm.get('common_name').valid && birdForm.get('common_name').touched">Please enter bird Name</span>
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Scientific Name" formControlName="scientific_name"
-                 [errorStateMatcher]="matcher">
-          <mat-error>
-            <span *ngIf="!birdForm.get('scientific_name').valid && birdForm.get('scientific_name').touched">Please enter bird scientific_name</span>
-          </mat-error>
-        </mat-form-field>
-        <div class="button-row">
-          <button type="submit" [disabled]="!birdForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
-        </div>
-      </form>
-    </mat-card>
-  </div> -->
+<h4>Add a New Bird</h4>
+<form action="">
+  <input type="text" placeholder="Enter Common Name" class="form-control my-3 p-3" name="common_name" [(ngModel)]="common_name">
+  <input type="text" placeholder="Enter Scientific Name" class="form-control my-3 p-3" name="scientific_name" [(ngModel)]="scientific_name">
+  <input type="text" placeholder="Enter General Status" class="form-control my-3 p-3" name="general_status" [(ngModel)]="general_status">
+  <input type="text" placeholder="Enter Conservation Status" class="form-control my-3 p-3" name="conservation_status" [(ngModel)]="conservation_status">
+  <input type="text" placeholder="Enter Species Name" class="form-control my-3 p-3" name="species_name" [(ngModel)]="species_name">
+  <input type="text" placeholder="Enter Category" class="form-control my-3 p-3" name="category" [(ngModel)]="category">
+  <input type="text" placeholder="Enter Bird Image URL" class="form-control my-3 p-3" name="image_url" [(ngModel)]="image_url">
+  <input type="text" placeholder="Enter Bird Description" class="form-control my-3 p-3" name="bird_description" [(ngModel)]="bird_description">
+  <input type="text" placeholder="Enter Bird Sound URL" class="form-control my-3 p-3" name="bird_sound" [(ngModel)]="bird_sound">
+  <input type="submit" value="Add Bird" class="btn btn-primary" (click)="addBird()">
+  <button class="btn btn-danger mx-3" (click)="closeModal()">Close</button>
+</form> 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { Sighting } from 'src/app/user.model';
+import { DataService } from '../../service/data.service';
+import { Sightings } from '../../models/user.model';
 import { latLng, tileLayer } from 'leaflet';
 
 @Component({
@@ -10,7 +10,7 @@ import { latLng, tileLayer } from 'leaflet';
 })
 
 export class SightingsComponent implements OnInit {
-  sightings:Sighting [];
+  sightings:Sightings [];
 
   options = {
     layers: [
@@ -22,10 +22,10 @@ export class SightingsComponent implements OnInit {
     center: latLng([ 0.044071, 36.932078 ])
   };
 
-  constructor() { }
+  constructor(private dataservice: DataService) { }
 
   ngOnInit(){ 
-    // return this.dataservice.getSightings()
-    //   .subscribe(data => this.sightings = data)
+    return this.dataservice.getSightings()
+      .subscribe(data => this.sightings = data)
   }
 }

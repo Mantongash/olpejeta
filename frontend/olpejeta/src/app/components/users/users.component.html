@@ -1,30 +1,49 @@
+<!-- <ul class="users">
+        <li *ngFor="let user of users"
+          [class.selected]="user === selectedUser"
+          (click)="onSelect(user)">
+          <span class="badge">{{user.id}}</span> {{user.user_name}}
+        </li>
+      </ul>
+      <app-userdetail [user]="selectedUser"></app-userdetail> -->
+
 <div class="container">
   <div class="row">
-    <div class="col-md-6" *ngFor="let user of users">
+    <div class="col-md-6">
       <h1>NAME<span>SIGHTINGS</span></h1>
+
       <hr class="name" />
-      <p>{{user.user_name}}<span>13</span></p>
-      <!-- <p>andrew@gmail.com<span>10</span></p> -->
-    </div>
+      <ul class="users">
+        <div *ngFor="let user of users | async">
+          <span class="badge">{{ user.id }}</span>
+          <!-- <a routerLink="userdetail/{{ user.id }}">{{ user.user_name }}</a> -->
+          <p>{{ user.user_name }}</p>
+        </div>
+      </ul>
 
-    <div class="col-md-6" *ngFor="let bird of bird">
-      <h2>DETAILS</h2>
-      <hr class="det" />
-      <img
-        src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-        alt=""
-        class="image"
-      />
-      <h3>{{ bird.common_name }}<small>Scissor-tailed Kite</small></h3>
-      <h3>Common Name: <small>Chelictinia riocourii</small></h3>
-      <h3>Age: <small>20</small></h3>
-      <hr class="det" />
+      <div class="col-md-6">
+        <h2>DETAILS</h2>
+        <hr class="det" />
+        <img
+          src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          alt=""
+          class="image"
+        />
+        <h3>Scientific Name: <small>Chelictinia riocourii</small></h3>
+        <h3>Common Name: <small>Scissor-tailed Kite</small></h3>
+        <h3>Age: <small>20</small></h3>
+        <hr class="det" />
 
-     
-      <h3>Scientific Name: <small>Black winged kite</small></h3>
-      <h3>Common Name: <small>Elanus Caeruleus</small></h3>
-      <h3>Age: <small>22</small></h3>
-      <hr class="end" />
+        <img
+          src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
+          alt=""
+          class="image"
+        />
+        <h3>Scientific Name: <small>Black winged kite</small></h3>
+        <h3>Common Name: <small>Elanus Caeruleus</small></h3>
+        <h3>Age: <small>22</small></h3>
+        <hr class="end" />
+      </div>
     </div>
   </div>
 </div>

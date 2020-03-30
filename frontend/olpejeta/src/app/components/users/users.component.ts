@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { User } from 'src/app/user.model';
-import { Bird } from '../../post';
+import { DataService } from '../../service/data.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-users',
@@ -10,14 +9,17 @@ import { Bird } from '../../post';
 })
 
 export class UsersComponent implements OnInit {
-  users:User [];
-  bird:Bird[];
+  users;
+
+  selectedUser: User;
+  onSelect(user: User): void {
+  this.selectedUser = user;
+}
 
   constructor(private dataservice: DataService
-    ) {}
+    ) { }
 
   ngOnInit(){ 
-    return this.dataservice.getUsers()
-      .subscribe(data => this.users = data)
+    this.users = this.dataservice.getUsers();
   }
 }
