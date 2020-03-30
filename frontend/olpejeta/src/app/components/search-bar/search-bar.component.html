@@ -7,17 +7,10 @@
         <span>{{option.common_name}}</span>
         <mat-icon matChipRemove>cancel</mat-icon>
       </mat-chip>
-<<<<<<< HEAD
-      <div class="searchbar">
-      <input #autocompleteInput type="text" placeholder="search species" aria-label="Number" matInput [formControl]="myControl"
-        [matAutocomplete]="auto" [matChipInputFor]="chipList">
-      </div>
-=======
 
       <input #autocompleteInput type="text" placeholder="Search Bird" aria-label="Number" matInput [formControl]="myControl"
         [matAutocomplete]="auto" [matChipInputFor]="chipList">
 
->>>>>>> 5b6e9187ff32951f9fd65a8e4cd3c57b19dc5148
       <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
         
         <mat-option *ngFor="let option of autoCompleteList" [value]="option" (onSelectionChange)="filterBirdList($event)">
