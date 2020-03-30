@@ -23,7 +23,7 @@ export class DataService {
   searchOption=[]
   public birdsData: Bird[] 
 
-  birdUrl : string = "https://cors-anywhere.herokuapp.com/https://olpejeta-apis.000webhostapp.com/api/birds";
+  birdUrl : string = "https://olpejeta.000webhostapp.com/api/birds";
 
   constructor(private http: HttpClient) { }  
 
