@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { User } from 'src/app/user.model';
+import { DataService } from '../../service/data.service';
+import { User } from '../../models/user.model';
 
-import { Sighting } from '../../post';
+import { Sighting } from '../../models/post';
 
 @Component({
   selector: 'app-users',

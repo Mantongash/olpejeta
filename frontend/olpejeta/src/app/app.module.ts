@@ -13,8 +13,9 @@ import {
   MatTableModule,
   MatButtonModule,
   MatCardModule,
+  MatDialogModule
 } from '@angular/material';
-import { DataService } from './data.service';
+import { DataService } from './service/data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -68,9 +69,11 @@ import { SpeciesEditComponent } from './components/species-edit/species-edit.com
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [ DataService ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SpeciesAddComponent, SpeciesComponent ],
 })
 export class AppModule { }

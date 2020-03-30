@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { Sighting } from 'src/app/user.model';
+import { DataService } from '../../service/data.service';
+import { Sighting } from '../../models/user.model';
 import { latLng, tileLayer } from 'leaflet';
 
 @Component({
