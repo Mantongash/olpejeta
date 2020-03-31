@@ -1,7 +1,6 @@
 import { Bird } from 'src/app/models/post';
 import { Injectable } from '@angular/core';
 import { User, Sightings, Species } from '../models/user.model'
-// import { Bird } from './post';
 import { Observable, of, throwError} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
@@ -18,63 +17,33 @@ export class DataService {
 
   // apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users/";
   sightingsUrl = "https://olpejeta-apis.000webhostapp.com/api/sightings";
-  // usersightingsUrl = "https://olpejeta-apis.000webhostapp.com/api/sightings?userId=${userId}"
-
+  // birdsUrl = "https://olpejeta.000webhostapp.com/getSpecies.php";
+  
   searchOption=[]
   public birdsData: Bird[] 
 
-  birdUrl : string = "https://olpejeta-apis.000webhostapp.com/api/birds";
+  birdUrl : string = "https://olpejeta.000webhostapp.com/api/birds";
 
   constructor(private http: HttpClient) { }  
 
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-  
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-  
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
-
-  getBirds(): Observable<Bird[]> {
+  getBirds() {
     return this.http.get<Bird[]>(this.birdUrl)
-      .pipe(
-        tap(bird => console.log('fetched birds')),
-        catchError(this.handleError('getBirds', []))
-      );
   }
   
-  getBird(id: number): Observable<Bird> {
-    const url = `${this.birdUrl}/${id}`;
-    return this.http.get<Bird>(url).pipe(
-      tap(_ => console.log(`fetched bird id=${id}`)),
-      catchError(this.handleError<Bird>(`getBird id=${id}`))
-    );
+  getBird(id: number) {
+   return this.http.get<Bird>(this.birdUrl + "/" + id);
   }
   
-  addBird(bird: Bird): Observable<Bird> {
-    return this.http.post<Bird>(this.birdUrl, bird, httpOptions).pipe(
-      tap((bird: Bird) => console.log(`added bird w/ id=${bird._id}`)),
-      catchError(this.handleError<Bird>('addBird'))
-    );
+  addBird(bird: Bird){
+    return this.http.post(this.birdUrl, bird, httpOptions);
   }
   
-  updateBird(id: any, bird: Bird): Observable<any> {
-    const url = `${this.birdUrl}/${id}`;
-    return this.http.put(url, bird, httpOptions).pipe(
-      tap(_ => console.log(`updated bird id=${id}`)),
-      catchError(this.handleError<any>('updateBird'))
-    );
+  updateBird(bird: Bird) {
+    return this.http.put(this.birdUrl + "/" + bird.id, bird);
   }
   
-  deleteBird(id: any): Observable<Bird> {
-    const url = `${this.birdUrl}/${id}`;
-    return this.http.delete<Bird>(url, httpOptions).pipe(
-      tap(_ => console.log(`deleted bird id=${id}`)),
-      catchError(this.handleError<Bird>('deleteBird'))
-    );
+  deleteBird(id: any) {
+    return this.http.delete(this.birdUrl + "/" + id);
   }
 
 // getUsers(){
@@ -93,7 +62,6 @@ getUsersightings(userId) {
 getSightings(){
     return this.http.get<Sightings[]>(this.sightingsUrl);
   }
-
 
 filteredListOptions() {
   let birds = this.birdsData;

@@ -5,40 +5,58 @@
         <app-search-bar
           (onSelectedOption)="onSelectedFilter($event)"
         ></app-search-bar>
-        <button class="btn-primary my-3" (click)="openAddBird()">Add Bird</button>
+        <button class="btn-primary my-3" (click)="openAddBird()">
+          Add Bird
+        </button>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <div class="sightings">
-        <h1>NAME<span>SIGHTINGS</span></h1>
-        <hr class="name" />
-        <div class="sight" *ngFor="let bird of bird">
-          <p>{{ bird.common_name }}</p>
+  <div class="records">
+    <div class="name item">
+      <h4>Name</h4>
+      <div *ngFor="let bird of bird">
+        <p>
+          <a (click)="onSelect(bird)" class="select-bird">{{
+            bird.common_name
+          }}</a>
+        </p>
+      </div>
+    </div>
+    <div class="sightings item">
+      <h4>Sightings</h4>
+    </div>
+    <div class="details item">
+      <h4>Details</h4>
+      <div *ngIf="selectedBird">
+        <div class="bird">
+          <img
+            src="{{ selectedBird.bird_image_url }}"
+            alt=""
+            width="150"
+            height="150"
+          />
+          <div class="bird-desc">
+            <p class="title">Description</p>
+            <p class="desc">{{ selectedBird.bird_description }}</p>
+          </div>
+        </div>
+        <div class="data">
+          <p class="title">Common Name</p>
+          <p>{{ selectedBird.common_name }}</p>
+          <p class="title">Scientific Name</p>
+          <p>{{ selectedBird.scientific_name }}</p>
+          <p class="title">General Status</p>
+          <p>{{ selectedBird.general_status }}</p>
+          <p class="title">Species</p>
+          <p>{{ selectedBird.species }}</p>
+          <p class="title">Category</p>
+          <p>{{ selectedBird.category }}</p>
+          <audio src="{{ selectedBird.bird_sound_url }}"></audio>
         </div>
       </div>
     </div>
-
-    <div class="col-md-6" *ngFor="let bird of bird">
-      <h2>DETAILS</h2>
-      <hr class="det" />
-      <img src="{{ bird.bird_image_url }}" alt="" class="image" />
-      <h3>
-        Scientific Name: <small>{{ bird.scientific_name }}</small>
-      </h3>
-      <h3>
-        Common Name: <small>{{ bird.common_name }}</small>
-      </h3>
-      <h3>
-        Category: <small>{{ bird.category }}</small>
-      </h3>
-      <hr class="det" />
-      <h3 class="desc">
-        Description: <small>{{ bird.bird_description }}</small>
-      </h3>
-      <hr class="det" />
-    </div>
   </div>
+
+  <!--add functionality-->
 </div>

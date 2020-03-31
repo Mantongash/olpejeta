@@ -13,11 +13,18 @@ import { SpeciesAddComponent } from '../species-add/species-add.component';
 export class SpeciesComponent implements OnInit {
   bird:Bird[];
 
+  selectedBird: Bird;
+
   displayedColumns: string[] = ['common_name', 'scientific_price'];
   data: Bird[] = [];
   isLoadingResults = true;
 
   constructor(private dataService: DataService, public matDialog: MatDialog) {}
+
+  onSelect(bird: Bird): void {
+    this.selectedBird = bird;
+    console.log(bird);
+  }
 
   openAddBird() {
     const dialogConfig = new MatDialogConfig();
@@ -42,9 +49,6 @@ export class SpeciesComponent implements OnInit {
     });//bird
   }
 
-  details($event){
-    alert("Niaje msee")
-  }
 
   onSelectedFilter(e) {
     this.getFilteredExpenseList();

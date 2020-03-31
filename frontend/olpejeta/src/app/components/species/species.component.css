@@ -1,6 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* .sightings{
     margin-left: 30%;
 } */
+
+.select-bird {
+    color: #0d4661;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.select-bird:hover, .select-bird:focus, .select-bird:active{
+    color: #0d4661;
+    text-decoration: none;
+    font-weight: bolder;
+}
 
 h1{
     margin-left: 25%;
@@ -11,28 +29,13 @@ span{
     margin-left: 20%;
 }
 
-p{
-    margin-left: 25%;
-}
-
-.name{
-    width: 55%;
-    border: 1px solid gray;
-}
-
-.details{
-    margin-left: 30%;
-}
 
 h2{
     font-size:25px;
     text-align: center;
 }
 
-.det{
-    width: 55%;
-    border: 1px solid gray;
-}
+
 
 h3{
     font-size: 20px;
@@ -47,6 +50,32 @@ h3{
     border-radius: 4px; 
 }
 
+.records {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.item {
+    width: 33%;
+}
+
+.bird img {
+    display: block;
+    margin: 1rem;
+}
+
+
+.title {
+    font-weight: 700;
+    color: #0d4661;
+    text-transform: uppercase;
+    border-bottom: 1px solid #0d4661;
+}
+.desc {
+    padding-left: 1rem;
+}
 
 /* new species */
 

@@ -16,9 +16,9 @@ import { UserdetailComponent } from './components/userdetail/userdetail.componen
   
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
-  // { path: '', component: UsersComponent},
-  // { path: 'userdetail/:userId', component: UserdetailComponent},
+  // { path: '', component: LoginComponent},
+  { path: '', component: UsersComponent},
+  { path: 'userdetail/:userId', component: UserdetailComponent},
 
   { path: 'dashboard', component: DashboardComponent,
   children: [
@@ -30,8 +30,8 @@ const routes: Routes = [
     { path: 'speciesdetail', component: SpeciesDetailComponent},
     { path: 'speciesadd', component: SpeciesAddComponent},
     { path: 'speciesedit', component: SpeciesEditComponent}, 
-    { path: 'users', component: UsersComponent},
-    { path: 'userdetail/:userId', component: UserdetailComponent}, 
+    // { path: 'users', component: UsersComponent},
+    // { path: 'userdetail/:userId', component: UserdetailComponent}, 
     
   ]
 },
