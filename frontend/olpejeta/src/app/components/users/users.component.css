@@ -62,3 +62,12 @@ small{
     border: 0.5px solid gray; 
     width: 60%;
 }
+
+.one_user{
+    cursor: pointer;
+    color: #0d4661;
+}
+
+.one_user:hover {
+    font-weight: bolder;
+}

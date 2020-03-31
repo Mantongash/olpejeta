@@ -15,9 +15,8 @@ const httpOptions = {
 })
 
 export class DataService {
-  apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users/";
+  usersUrl = "https://olpejeta.000webhostapp.com/api/users";
   // birdUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
-  sightingsUrl = "https://olpejeta-apis.000webhostapp.com/api/sightings";
   // birdsUrl = "https://olpejeta.000webhostapp.com/getSpecies.php";
   
   searchOption=[]
@@ -51,15 +50,16 @@ export class DataService {
 
 
 getUsers(){
-    return this.http.get<User[]>(this.apiUrl);
+    return this.http.get<User[]>(this.usersUrl);
   }
 
 // getBirds(): Observable<Bird[]>{
 //     return this.http.get<Bird[]>(this.birdUrl);
 // }
 
-getSightings(){
-    return this.http.get<Sighting[]>(this.sightingsUrl);
+getSightings(id:number){
+  let sightingsUrl = `https://olpejeta.000webhostapp.com/api/users/${id}/sightings`
+    return this.http.get(sightingsUrl);
 }
 
 // getSpecies(){

@@ -37,6 +37,10 @@ export class SpeciesComponent implements OnInit {
     const modalDialog = this.matDialog.open(SpeciesAddComponent, dialogConfig);
   }
 
+  updateBird(){
+    alert("Updated")
+  }
+
   ngOnInit() {
     this.dataService.getBirds()
     .subscribe(birds => {

@@ -12,6 +12,7 @@ import { Sighting } from '../../models/post';
 
 export class UsersComponent implements OnInit {
   users:User [];
+  selectedUser: any;
 
   constructor(private dataservice: DataService
     ) {}
@@ -19,5 +20,16 @@ export class UsersComponent implements OnInit {
   ngOnInit(){ 
     return this.dataservice.getUsers()
       .subscribe(data => this.users = data)
+
   }
+
+  selectUser(id:number){
+    return this.dataservice.getSightings(id)
+    .subscribe(data => this.selectedUser = data)
+
+    // let url = `https://olpejeta.000webhostapp.com/api/users/${id}/sightings`
+    // this.selectedUser = url;
+    // console.log(this.selectedUser);
+  }
+  
 }
