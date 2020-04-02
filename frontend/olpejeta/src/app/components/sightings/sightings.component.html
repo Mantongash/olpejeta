@@ -7,14 +7,3 @@
   [leafletLayersControl]="layersControl"
 ></div>
 </div>
-
-<div>
-  <h2>DETAILS</h2>
-  <div class="sightings" *ngFor="let sighting of sightings">
-    <hr/>
-    <p>{{ sighting.id }}</p>
-    <!-- <p>{{ sighting.user_id }}</p> -->
-    <p>{{ sighting.date_taken }}</p>
-    <p>{{ sighting.sighting_location}}</p>
-  </div>
-</div>

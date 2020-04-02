@@ -59,6 +59,7 @@ h3{
 
 .item {
     width: 33%;
+    height: 70vh;
 }
 
 .bird img {
@@ -75,6 +76,11 @@ h3{
 }
 .desc {
     padding-left: 1rem;
+}
+
+.details {
+    overflow: scroll;
+    height: 100%;
 }
 
 /* new species */

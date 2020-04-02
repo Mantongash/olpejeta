@@ -14,15 +14,14 @@ const httpOptions = {
 })
 
 export class DataService {
-
-  // apiUrl = "https://olpejeta-apis.000webhostapp.com/api/users/";
-  sightingsUrl = "https://olpejeta-apis.000webhostapp.com/api/sightings";
-  // birdsUrl = "https://olpejeta.000webhostapp.com/getSpecies.php";
+  usersUrl = "https://olpejeta.000webhostapp.com/api/users";
+  // apiUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
+  // speciesUrl = "https://olpejeta.000webhostapp.com/api/birds";
   
   searchOption=[]
   public birdsData: Bird[] 
 
-  birdUrl : string = "https://olpejeta.000webhostapp.com/api/birds";
+  birdUrl : string = "https://cors-anywhere.herokuapp.com/https://olpejeta.000webhostapp.com/api/birds";
 
   constructor(private http: HttpClient) { }  
 
@@ -46,22 +45,19 @@ export class DataService {
     return this.http.delete(this.birdUrl + "/" + id);
   }
 
-// getUsers(){
-//     return this.http.get<User[]>(this.apiUrl);
-//   }
-
 getUsers(){
-  return this.http.get('https://olpejeta-apis.000webhostapp.com/api/users/');
-  }
-  
-getUsersightings(userId) {
-    return this.http.get(`https://olpejeta-apis.000webhostapp.com/api/sightings?userId=${userId}`);
-    // return this.http.get('https://olpejeta-apis.000webhostapp.com/api/users/2/sightings');
+    return this.http.get<User[]>(this.usersUrl);
   }
 
-getSightings(){
-    return this.http.get<Sightings[]>(this.sightingsUrl);
-  }
+getSightings(id:number){
+  let sightingsUrl = `https://olpejeta.000webhostapp.com/api/users/${id}/sightings`
+    return this.http.get(sightingsUrl);
+}
+
+getSpecies(id:number){
+  let apiUrl = `https://olpejeta.000webhostapp.com/api/birds/${id}/sightings`
+    return this.http.get(apiUrl);
+}
 
 filteredListOptions() {
   let birds = this.birdsData;

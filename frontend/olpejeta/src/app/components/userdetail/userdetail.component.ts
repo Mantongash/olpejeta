@@ -16,8 +16,8 @@ userId;
 constructor(private dataservice: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.userId = this.route.snapshot.params.userId;
-    this.usersightings = this.dataservice.getUsersightings(this.userId);
+    // this.userId = this.route.snapshot.params.userId;
+    // this.usersightings = this.dataservice.getUsersightings(this.userId);
   }
 
 }

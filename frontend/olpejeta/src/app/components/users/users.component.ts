@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../service/data.service';
-import { User } from '../../models/user.model';
+import { User, Species } from '../../models/user.model';
 
 @Component({
   selector: 'app-users',
@@ -9,17 +9,21 @@ import { User } from '../../models/user.model';
 })
 
 export class UsersComponent implements OnInit {
-  users;
-
-  selectedUser: User;
-  onSelect(user: User): void {
-  this.selectedUser = user;
-}
+  users:User [];
+  selectedUser: any;
+  species:Species [];
 
   constructor(private dataservice: DataService
     ) { }
 
   ngOnInit(){ 
-    this.users = this.dataservice.getUsers();
+    return this.dataservice.getUsers()
+      .subscribe(data => this.users = data)
   }
+
+  selectUser(id:number){
+    return this.dataservice.getSightings(id)
+    .subscribe(data => this.selectedUser = data)
+  }
+
 }

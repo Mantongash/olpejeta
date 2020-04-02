@@ -1,4 +1,3 @@
-// import { species } from 'src/app/user.model';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SummaryComponent } from './components/summary/summary.component';
@@ -16,10 +15,7 @@ import { UserdetailComponent } from './components/userdetail/userdetail.componen
   
 
 const routes: Routes = [
-  // { path: '', component: LoginComponent},
-  { path: '', component: UsersComponent},
-  { path: 'userdetail/:userId', component: UserdetailComponent},
-
+  { path: '', component: LoginComponent},
   { path: 'dashboard', component: DashboardComponent,
   children: [
     { path: 'guides', component: GuidesComponent},
@@ -30,9 +26,7 @@ const routes: Routes = [
     { path: 'speciesdetail', component: SpeciesDetailComponent},
     { path: 'speciesadd', component: SpeciesAddComponent},
     { path: 'speciesedit', component: SpeciesEditComponent}, 
-    // { path: 'users', component: UsersComponent},
-    // { path: 'userdetail/:userId', component: UserdetailComponent}, 
-    
+    { path: 'users', component: UsersComponent},
   ]
 },
 ];

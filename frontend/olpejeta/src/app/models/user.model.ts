@@ -3,7 +3,7 @@ export class User{
     user_name:string;
 }
 
-export class Bird{
+export class Species{
     id: number;
     common_name:string;
     scientific_name:string;
@@ -26,7 +26,7 @@ export class Sightings{
     created_at:number;
 }
 
-export class Species{
-    id:number;
-    species_name:string;
-}
+// export class Species{
+//     id:number;
+//     species_name:string;
+// }

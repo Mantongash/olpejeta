@@ -54,9 +54,12 @@
           <p>{{ selectedBird.category }}</p>
           <audio src="{{ selectedBird.bird_sound_url }}"></audio>
         </div>
+        <div class="buttons">
+          <button class="btn btn-info p-2 m-2" (click) = "updateBird()">Update</button>
+          <button class="btn btn-danger p-2 m-2">Delete</button>
+        </div>
       </div>
     </div>
   </div>
-
   <!--add functionality-->
 </div>
