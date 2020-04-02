@@ -1,4 +1,3 @@
-// import { species } from 'src/app/user.model';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SummaryComponent } from './components/summary/summary.component';
@@ -12,6 +11,7 @@ import { SearchBarComponent} from './components/search-bar/search-bar.component'
 import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
 import { SpeciesAddComponent } from './components/species-add/species-add.component';
 import { SpeciesEditComponent } from './components/species-edit/species-edit.component';
+import { UserdetailComponent } from './components/userdetail/userdetail.component';
   
 
 const routes: Routes = [
@@ -19,14 +19,15 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,
   children: [
     { path: 'guides', component: GuidesComponent},
-    { path: 'users', component: UsersComponent},
     { path: 'species',component: SpeciesComponent},
     { path: 'summary', component: SummaryComponent},
     { path: 'sightings', component: SightingsComponent},
     { path: 'searchbar', component: SearchBarComponent},
     { path: 'speciesdetail', component: SpeciesDetailComponent},
     { path: 'speciesadd', component: SpeciesAddComponent},
-    { path: 'speciesedit', component: SpeciesEditComponent},  ]
+    { path: 'speciesedit', component: SpeciesEditComponent}, 
+    { path: 'users', component: UsersComponent},
+  ]
 },
 ];
 @NgModule({

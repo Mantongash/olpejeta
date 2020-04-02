@@ -1,7 +1,6 @@
 import { Bird } from 'src/app/models/post';
 import { Injectable } from '@angular/core';
-import { User, Sighting, Species } from '../models/user.model'
-// import { Bird } from './post';
+import { User, Sightings, Species } from '../models/user.model'
 import { Observable, of, throwError} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
@@ -16,8 +15,8 @@ const httpOptions = {
 
 export class DataService {
   usersUrl = "https://olpejeta.000webhostapp.com/api/users";
-  // birdUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
-  // birdsUrl = "https://olpejeta.000webhostapp.com/getSpecies.php";
+  // apiUrl = "https://olpejeta-apis.000webhostapp.com/api/birds";
+  // speciesUrl = "https://olpejeta.000webhostapp.com/api/birds";
   
   searchOption=[]
   public birdsData: Bird[] 
@@ -26,11 +25,9 @@ export class DataService {
 
   constructor(private http: HttpClient) { }  
 
- 
-
   getBirds() {
     return this.http.get<Bird[]>(this.birdUrl)
-    }
+  }
   
   getBird(id: number) {
    return this.http.get<Bird>(this.birdUrl + "/" + id);
@@ -48,23 +45,19 @@ export class DataService {
     return this.http.delete(this.birdUrl + "/" + id);
   }
 
-
 getUsers(){
     return this.http.get<User[]>(this.usersUrl);
   }
-
-// getBirds(): Observable<Bird[]>{
-//     return this.http.get<Bird[]>(this.birdUrl);
-// }
 
 getSightings(id:number){
   let sightingsUrl = `https://olpejeta.000webhostapp.com/api/users/${id}/sightings`
     return this.http.get(sightingsUrl);
 }
 
-// getSpecies(){
-//   return this.http.get<Species[]>(this.speciesUrl);
-// }
+getSpecies(id:number){
+  let apiUrl = `https://olpejeta.000webhostapp.com/api/birds/${id}/sightings`
+    return this.http.get(apiUrl);
+}
 
 filteredListOptions() {
   let birds = this.birdsData;
@@ -80,13 +73,3 @@ filteredListOptions() {
   return filteredBirdsList;
 }
 }
-
-// getBirds(){
-//   // return this._http.get<Birds[]>(this.birdUrl);
-// }
-// getSightings(){
-//   return this._http.get<Sighting[]>(this.sightingsUrl);
-// }
-// getSpecies(){
-//   return this._http.get<Species[]>(this.speciesUrl);
-// }

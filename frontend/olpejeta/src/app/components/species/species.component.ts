@@ -12,7 +12,6 @@ import { SpeciesAddComponent } from '../species-add/species-add.component';
 
 export class SpeciesComponent implements OnInit {
   bird:Bird[];
-
   selectedBird: Bird;
 
   displayedColumns: string[] = ['common_name', 'scientific_price'];
@@ -52,7 +51,6 @@ export class SpeciesComponent implements OnInit {
       this.isLoadingResults = false;
     });//bird
   }
-
 
   onSelectedFilter(e) {
     this.getFilteredExpenseList();

@@ -4,6 +4,10 @@ h1{
     text-align: center;
 }
 
+.one_user{
+    margin-top: 5px;
+}
+
 span{
     margin-left: 30%;
     font-size: 20px;
@@ -46,6 +50,7 @@ h3{
     margin-left: 30%;
     border: 1px solid #ddd;
     border-radius: 4px; 
+    margin-top: 10px;
 }
 
 .container{
