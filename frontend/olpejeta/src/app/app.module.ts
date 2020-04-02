@@ -30,8 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
 import { SpeciesAddComponent } from './components/species-add/species-add.component';
 import { SpeciesEditComponent } from './components/species-edit/species-edit.component';
-import { UserdetailComponent } from './components/userdetail/userdetail.component';
+import { HighchartsChartComponent } from 'highcharts-angular';
 
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,7 @@ import { UserdetailComponent } from './components/userdetail/userdetail.componen
     SpeciesDetailComponent,
     SpeciesAddComponent,
     SpeciesEditComponent,
-    UserdetailComponent,
+    HighchartsChartComponent
   ],
   imports: [
     HttpClientModule,
