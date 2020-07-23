@@ -1,36 +1,40 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { LeafletModule } from "@asymmetrik/ngx-leaflet";
 // import { MatAutocompleteModule } from '@angular/material/autocomplete';
 // import { MatInputModule } from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
-  MatIconModule, MatInputModule,
-  MatAutocompleteModule, MatChipsModule,
-  MatFormFieldModule, MatPaginatorModule,
-  MatProgressSpinnerModule, MatSortModule,
+  MatIconModule,
+  MatInputModule,
+  MatAutocompleteModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
   MatTableModule,
   MatButtonModule,
   MatCardModule,
-  MatDialogModule
-} from '@angular/material';
-import { DataService } from './service/data.service';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { UsersComponent } from './components/users/users.component';
-import { GuidesComponent } from './components/guides/guides.component';
-import { SummaryComponent } from './components/summary/summary.component';
-import { SpeciesComponent } from './components/species/species.component';
-import { SightingsComponent } from './components/sightings/sightings.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
-import { SpeciesAddComponent } from './components/species-add/species-add.component';
-import { SpeciesEditComponent } from './components/species-edit/species-edit.component';
-import { HighchartsChartComponent } from 'highcharts-angular';
+  MatDialogModule,
+} from "@angular/material";
+import { DataService } from "./service/data.service";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./components/login/login.component";
+import { UsersComponent } from "./components/users/users.component";
+import { GuidesComponent } from "./components/guides/guides.component";
+import { SummaryComponent } from "./components/summary/summary.component";
+import { SpeciesComponent } from "./components/species/species.component";
+import { SightingsComponent } from "./components/sightings/sightings.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { SearchBarComponent } from "./components/search-bar/search-bar.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SpeciesDetailComponent } from "./components/species-detail/species-detail.component";
+import { SpeciesAddComponent } from "./components/species-add/species-add.component";
+import { SpeciesEditComponent } from "./components/species-edit/species-edit.component";
+import { HighchartsChartComponent } from "highcharts-angular";
 
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
@@ -47,7 +51,7 @@ import { HighchartsChartComponent } from 'highcharts-angular';
     SpeciesDetailComponent,
     SpeciesAddComponent,
     SpeciesEditComponent,
-    HighchartsChartComponent
+    HighchartsChartComponent,
   ],
   imports: [
     HttpClientModule,
@@ -72,10 +76,10 @@ import { HighchartsChartComponent } from 'highcharts-angular';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
   ],
-  providers: [ DataService ],
+  providers: [DataService],
   bootstrap: [AppComponent],
-  entryComponents: [SpeciesAddComponent, SpeciesComponent ],
+  entryComponents: [SpeciesAddComponent, SpeciesComponent],
 })
-export class AppModule { }
+export class AppModule {}
