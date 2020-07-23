@@ -3,7 +3,8 @@ import { CommonModule } from "@angular/common";
 import { HighchartsChartComponent } from "highcharts-angular";
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, HighchartsChartComponent],
+  declarations: [HighchartsChartComponent],
+  imports: [CommonModule,],
+  exports: [HighchartsChartComponent],
 })
 export class SharedModule {}
