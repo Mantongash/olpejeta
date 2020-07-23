@@ -52,7 +52,6 @@ import { SharedModule } from "./shared/shared.module";
     SpeciesDetailComponent,
     SpeciesAddComponent,
     SpeciesEditComponent,
-    HighchartsChartComponent,
   ],
   imports: [
     HttpClientModule,
