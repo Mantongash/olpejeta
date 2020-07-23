@@ -34,7 +34,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SpeciesDetailComponent } from "./components/species-detail/species-detail.component";
 import { SpeciesAddComponent } from "./components/species-add/species-add.component";
 import { SpeciesEditComponent } from "./components/species-edit/species-edit.component";
-import { HighchartsChartComponent } from "highcharts-angular";
+import { SharedModule } from "./shared/shared.module";
 
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
@@ -43,6 +43,7 @@ import { HighchartsChartComponent } from "highcharts-angular";
     LoginComponent,
     UsersComponent,
     GuidesComponent,
+
     SummaryComponent,
     SpeciesComponent,
     SightingsComponent,
@@ -77,6 +78,7 @@ import { HighchartsChartComponent } from "highcharts-angular";
     MatCardModule,
     MatFormFieldModule,
     MatDialogModule,
+    SharedModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
